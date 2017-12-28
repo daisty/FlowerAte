@@ -1,0 +1,27 @@
+
+<ion-header>
+
+  <ion-navbar color="energy" >
+    <ion-title>付款</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="successAlert()" class="sure">确认</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="post">
+  <ion-list>
+    <ion-item class="marginBot-10">
+      <ion-label>借款时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.payDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label>付款方式</ion-label>
+        <ion-select [(ngModel)]="payWay" interface="popover" [(ngModel)]="paramObj.payOrigin">
+          <ion-option *ngFor="let item of payList">{{ item }}</ion-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+    
+</ion-content>

@@ -1,0 +1,17 @@
+page-reimbursement-invoice {
+    .submit{
+        font-size: 16px;
+    }
+    #incorrect{
+        background-color: #fff;
+        .text-reason{
+            padding: 0 16px;
+            .wrong{
+                font-size: 18px;
+                color: $darkColor;
+            }
+
+        }
+    }
+
+}

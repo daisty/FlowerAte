@@ -1,0 +1,140 @@
+<ion-header class="head">
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title class="headTitle">请假</ion-title>
+    <my-back text="首页"  *ngIf="tab"  (click)="closeModal()"></my-back>
+    <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="addAfl()">
+        请假
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="askforleaveList">
+  <div id="btnFun" *ngIf="isleader">
+    <ion-segment [(ngModel)]="pet" (ngModelChange)="change()">
+      <ion-segment-button value="kittens">
+        待我审核
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        我的请假
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet" *ngIf="isleader">
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-card *ngFor="let check of gotoCheck" (click)="detailAfl(check.aduitStatus,check.id)">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/userImage1.png">
+            </ion-avatar>
+            <h2>{{check.name}}
+              <span>{{check.depart}}</span>
+            </h2>
+            <p>{{check.date}}</p>
+            <button ion-button color="{{check.aduitStatus | color }}" round item-end class="status">{{check.aduitStatus|status}}</button>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="type">
+            <ion-icon name="my-qingjia" md="md-my-qingjia" color="askforleave" class="afl" clear></ion-icon>
+            <span class="afl-type">请假类型：</span>
+            <span class="afl-res">{{check.vacateType | status}}</span>
+          </p>
+          <div class="time">
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>开始时间：{{check.startTime}}</span>
+            </p>
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>结束时间：{{check.endTime}}</span>
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-card *ngFor="let afl of aflList" class="Leader" (click)="detailAfl(afl.aduitStatus,afl.id)">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/userImage1.png">
+            </ion-avatar>
+            <h2>{{afl.name}}
+              <span>{{afl.depart}}</span>
+            </h2>
+            <p>{{afl.date}}</p>
+            <button ion-button color="{{afl.aduitStatus | color }}" round item-end class="status">{{afl.aduitStatus|status}}</button>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="type">
+            <ion-icon name="my-qingjia" md="md-my-qingjia" color="askforleave" class="afl" clear></ion-icon>
+            <span class="afl-type">请假类型：</span>
+            <span class="afl-res">{{afl.vacateType | status}}</span>
+          </p>
+          <div class="time">
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>开始时间：{{afl.startTime}}</span>
+            </p>
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>结束时间：{{afl.endTime}}</span>
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+  </div>
+
+  <div [ngSwitch]="pet" *ngIf="!isleader">
+    <ion-list class="nomTop">
+      <ion-card *ngFor="let afl of aflList" class="Leader" (click)="detailAfl(afl.aduitStatus,afl.id)">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/userImage1.png">
+            </ion-avatar>
+            <h2>{{afl.name}}
+              <span>{{afl.depart}}</span>
+            </h2>
+            <p>{{afl.date}}</p>
+            <button ion-button color="{{afl.aduitStatus | color }}" round item-end class="status">{{afl.aduitStatus|status}}</button>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="type">
+            <ion-icon name="my-qingjia" md="md-my-qingjia" color="askforleave" class="afl" clear></ion-icon>
+            <span class="afl-type">请假类型：</span>
+            <span class="afl-res">{{afl.vacateType | status}}</span>
+          </p>
+          <div class="time">
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>开始时间：{{afl.startTime}}</span>
+            </p>
+            <p>
+              <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+              <span>结束时间：{{afl.endTime}}</span>
+            </p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event,pet)" threshold="200px" *ngIf='hideBtn'>
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

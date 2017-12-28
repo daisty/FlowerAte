@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title class="toCenter">核对意见</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        确认
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="content">
+  <ion-list>
+      <my-radio 
+        buttonColor='#limegreen'
+        title='是否收到单据'
+        option1 = '是'
+        option2 = '否'
+        [(radio)]='paramObj.documentCondition'>
+        </my-radio>
+      <my-radio 
+        buttonColor='#limegreen' [(radio)]='paramObj.lendRetunStatus'>
+        </my-radio>
+      <ion-item class="marginTop-10">
+        审核内容<br><textarea [(ngModel)]="paramObj.checkcontent" placeholder="请输入原因" class="expl"></textarea>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

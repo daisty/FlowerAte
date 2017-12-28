@@ -1,0 +1,649 @@
+<ion-content id="issp-home" class="container transparent-header">
+  <ion-header>
+    <ion-navbar text-center>
+      <ion-title>ISSP</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <div class="banner">
+    <a href="#" class="banner_pic" (click)="clickBig()">
+      <img src="assets/imgs/new_banner.jpg" alt="">
+    </a>
+  </div>
+  <ion-list id="issp-news">
+    <ion-item class="issp-item" (click)="bulletin()">
+        <button ion-button outline color="announcement" class="issp-post" item-start>公告</button>
+        <span class="news-know">issp先行版正式上线</span>
+    </ion-item>
+    <ion-item class="issp-item">
+        <button ion-button outline color="ganament" class="issp-post" item-start>管理</button>
+        <span class="news-know">应用管理</span>
+        <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <!-- 费用管理 -->
+  <ion-grid id="projects">
+    <h4>费用管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models" (click)="account()">
+        <a href="#" class="all-models model-natrue">
+            <ion-icon name="my-reimbursement" md="md-my-reimbursement" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text">报销</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models no-model" (click)="loan()">
+        <a href="#" class="all-models model-earth">
+            <ion-icon name="my-loan" md="md-my-loan" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text">借款</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-employee-salary" md="md-my-employee-salary" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">员工工资</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-reward" md="md-my-reward" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text" >奖金资金</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 行政管理 -->
+  <ion-grid id="projects">
+    <h4>行政管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models"  (click)="punch()">
+        <a href="#" class="all-models model-earth">
+            <ion-icon name="my-address" md="md-my-address" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text">打卡</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models" (click)="askForLeave()">
+        <a href="#" class="all-models model-zreo">
+            <ion-icon name="my-leave" md="md-my-leave" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text">请假</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-overtime" md="md-my-overtime" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">加班</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-work-transfer" md="md-my-work-transfer" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">工作交接</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 项目管理 -->
+  <ion-grid id="projects">
+    <h4>项目管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models" (click)="taskAssign()">
+        <a href="#" class="all-models model-earth">
+            <ion-icon name="my-role" md="md-my-role" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text">任务分配</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-progress-sync" md="md-my-progress-sync" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">进度同步</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-purpose">
+            <ion-icon name="my-projects" md="md-my-projects" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">项目提成 </p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-bonus-payment" md="md-my-bonus-payment" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">项目奖金</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 客户管理 -->
+  <ion-grid id="projects">
+    <h4>客户管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-purpose">
+            <ion-icon name="my-market" md="md-my-market" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">市场招待</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-customer-info" md="md-my-customer-info" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">客户信息</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-competitor" md="md-my-competitor" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">竞争对手</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-business-meetings" md="md-my-business-meetings" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">商务洽谈</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <!-- 财务报表 -->
+  <ion-grid id="projects">
+    <h4>财务报表</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">银行流水</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金流水</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">记账凭证</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-natrue">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">明细账</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 人员招聘与配置 -->
+  <ion-grid id="projects">
+    <h4>人员招聘与配置</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-recruitment" md="md-my-recruitment" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">招聘</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-evaluation-system" md="md-my-evaluation-system" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">评估体系</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <!-- 资源规划 -->
+  <ion-grid id="projects">
+    <h4>资源规划</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">公司战略</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-purpose">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">简介管理</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">公司资质</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-natrue">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">公司企业文化</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 绩效管理 -->
+  <ion-grid id="projects">
+    <h4>绩效管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-natrue">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">项目提成</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">业务提成</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">管理提成</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金方</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 薪酬福利 -->
+  <ion-grid id="projects">
+    <h4>薪酬福利</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">内部推荐奖</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">公司奖励</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">公司补助</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">员工节日福利</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 员工关系 -->
+  <ion-grid id="projects">
+    <h4>员工关系</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">员工信息</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">通讯录</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">入职管理</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">商业保险</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 员工发展 -->
+  <ion-grid id="projects">
+    <h4>员工发展</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">技能晋升</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">技能晋升</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">技能晋升</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">综合素养调研</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 制度管理 -->
+  <ion-grid id="projects">
+    <h4>制度管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">系统功能</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">反馈</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 业务管理 -->
+  <ion-grid id="projects">
+    <h4>业务管理</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">招投标流程</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">商务合同</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">商务总结</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 收入核算 -->
+  <ion-grid id="projects">
+    <h4>收入核算</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">合同单价</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">地区工作进度</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">往来账务</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models" >
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金回拢</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 项目成本 -->
+  <ion-grid id="projects">
+    <h4>项目成本</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">项目前期活动费</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">项目内费用</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">管理费用</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">应交税金</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 指标卡 -->
+  <ion-grid id="projects">
+    <h4>指标卡</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">平衡计分卡</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 公司用车 -->
+  <ion-grid id="projects">
+    <h4>公司用车</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">出车费</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">油卡充值</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 公司房屋 -->
+  <ion-grid id="projects">
+    <h4>公司房屋</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">房屋费用</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 公司设备 -->
+  <ion-grid id="projects">
+    <h4>公司设备</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">设备购买</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">设备入库盘点</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 公司合同 -->
+  <ion-grid id="projects">
+    <h4>公司房屋</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">合同保管</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 现金流水账 -->
+  <ion-grid id="projects">
+    <h4>现金流水账</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-purpose no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金流水账</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 资金计划表 -->
+  <ion-grid id="projects">
+    <h4>资金计划表</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">回款管理</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">成本明细</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-leave no-model">
+            <ion-icon name="my-bookkeeping-vouchers" md="md-my-bookkeeping-vouchers" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金准备</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-zreo no-model">
+            <ion-icon name="my-detail-account" md="md-my-detail-account" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">资金核对</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 请款报销 -->
+  <ion-grid id="projects">
+    <h4>请款报销</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-natrue no-model">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">出车管理</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models model-earth no-model">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">费用管理</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 工资核算 -->
+  <ion-grid id="projects">
+    <h4>工资核算</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-zreo">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">薪资核算</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-leave">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">社保缴费</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 账务对外 -->
+  <ion-grid id="projects">
+    <h4>账务对外</h4>
+    <ion-row>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-earth">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">通信集成</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-purpose">
+            <ion-icon name="my-capital-flow" md="md-my-capital-flow" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">对外税务</p>
+      </ion-col>
+      <ion-col col-3 class="issp-models">
+        <a href="#" class="all-models no-model model-natrue">
+            <ion-icon name="my-bank-water" md="md-my-bank-water" color="white" clear></ion-icon>
+        </a>
+        <p class="bottom-text no-text">工商管理</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list id="issp-news">
+    <ion-item class="issp-item">
+        <button ion-button outline color="sort" class="issp-post" item-start>管理</button>
+        <span class="news-know">应用分类</span>
+        <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

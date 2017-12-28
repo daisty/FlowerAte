@@ -1,0 +1,18 @@
+<ion-header>
+    
+  <ion-navbar color="energy" >
+    <ion-title>审核过程/原因</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="checkReason">
+  <ion-list no-lines id="pass">
+    <ul class="pass-list">
+      <li *ngFor=" let item of data">
+        <p class="date">{{item.auditTime}}</p>
+        <p class="pass-process" [innerHTML]="item.procing"></p>
+      </li>
+    </ul>
+  </ion-list>
+    
+</ion-content>

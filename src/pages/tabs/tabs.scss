@@ -1,0 +1,23 @@
+
+page-tabs {
+    
+}
+.tabs-md-footerNav .tab-button-icon, .tabs-ios-white .tab-button-icon{
+    color: #c1c1c1;
+}
+.tabs-md-footerNav .tab-button, .tabs-ios-white .tab-button{
+    color: #c1c1c1;
+}
+
+.tabs-ios-footerNav .tab-button[aria-selected=true] .tab-button-icon{
+    color: #38C0FF;
+}
+.tabs-ios-footerNav .tab-button[aria-selected=true]{
+    color: #38C0FF;
+}
+.tabs-md-footerNav .tab-button[aria-selected=true] .tab-button-icon{
+    color: #38C0FF;
+}
+.tabs-md-footerNav .tab-button[aria-selected=true]{
+    color: #38C0FF;
+}

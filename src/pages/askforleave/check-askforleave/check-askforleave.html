@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>{{ page?'语音' : '手动'}}审核</ion-title>
+    <ion-buttons end>
+      <button ion-button class="submit" (click)="confirm()">确认</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="check-askforleave">
+    <my-radio buttonColor='#limegreen' [(radio)]='paramObj.aduitStatus'  *ngIf="!page"> 
+    </my-radio>
+    <ion-item class="marginTop-10"  *ngIf="!page">
+      审核原因
+      <br>
+      <textarea  placeholder="请输入原因" class="expl" [(ngModel)]="paramObj.advice"></textarea>
+    </ion-item>
+    <ion-item class="marginTop-10" *ngIf="page" (click)="startListening()">
+        点击输入语音
+        <div style="white-space: normal;margin-top: 10px;">
+          {{ text }}
+        </div>
+      </ion-item>
+      <ion-item class="marginTop-10 text" *ngIf="page">
+        **语音内容必须为：通过、不通过、同意、不同意、确认、不确认**
+      </ion-item>
+  </ion-content>

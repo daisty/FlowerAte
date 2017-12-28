@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title class="toCenter">分析意见</ion-title>
+    <ion-buttons end>
+      <button ion-button class="submit" (click)="confirm()">确认</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="reim-analisis">
+  <my-radio buttonColor='#limegreen' [(radio)]='paramObj.chargerAuditStatus' title='是否通过分析' option1 = '已分析' option2 = '申请冻结'>
+  </my-radio>
+  <ion-item class="marginTop-10">
+    分析原因
+    <br>
+    <textarea [(ngModel)]="paramObj.auditAdvice" placeholder="请输入原因" class="expl"></textarea>
+  </ion-item>
+</ion-content>

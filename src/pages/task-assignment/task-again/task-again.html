@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>再次分发</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="submit()">
+        提交
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="content">
+  <ion-list>
+    <ion-item class="marginBot-10">
+      <ion-label class="taskName">执行人</ion-label>
+      <ion-select [(ngModel)]="paramObj.overWorker" okText="确认" cancelText="取消">
+        <!-- <ion-option *ngFor="let item of peoples">{{ item }}</ion-option> -->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="taskName">任务量</ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.planNum" placeholder="请输入任务量"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="taskName">时间类型</ion-label>
+      <ion-select [(ngModel)]="paramObj.needType" okText="确认" cancelText="取消">
+        <ion-option value="MINUTE">分钟</ion-option>
+        <ion-option value="HOUR">时</ion-option>
+        <ion-option value="DAY">天</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="taskName">任务开始时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.startTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label class="taskName">任务结束时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.endTime"></ion-datetime>
+    </ion-item>
+    <my-radio buttonColor='#limegreen' [(radio)]='paramObj.split' title="任务是否拆分" option1="是" option2="否">
+    </my-radio>
+    <ion-item class="marginBot-10">
+      <ion-label class="taskName">拆分天数 </ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.day" placeholder="请输入拆分为几天"></ion-input>
+    </ion-item>
+    <ion-item class="noBBottom">
+      任务备注
+    </ion-item>
+    <ion-item>
+      <textarea placeholder="例如：任务紧急" [(ngModel)]="paramObj.remark" class="expl"></textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

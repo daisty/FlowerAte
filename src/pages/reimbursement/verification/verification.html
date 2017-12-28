@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="energy" no-border-bottom text-center>
+    <ion-title>核对有误</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="submit()">
+        确认
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="incorrect">
+  <div class="text-reason">
+    <p class="wrong">有误原因</p>
+    <ion-textarea placeholder="请输入原因" class="textarea" [(ngModel)]='paramObj.receiveTicketCon'></ion-textarea>
+  </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="headerColor" no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>按组织结构查看</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="organize-list">
+  <!-- <p>Accordion list example - Best places to visit:</p> -->
+
+  <accordion-list *ngFor="let item of depPerson"
+                  [title]="item.department"
+                  [numberData]="item.peopleCount"
+                  textColor="#333"
+                  hasMargin="false"
+                  >
+    <ion-item id="contact-list" *ngFor="let itemList of depList">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/contact_pic.png">
+      </ion-thumbnail>
+      <div class="h22">
+        <h2>{{itemList.username}}</h2>
+        <ion-icon name="my-avatar" color="energy" class="person"></ion-icon>
+        <!-- <button ion-button color="postBtn" item-right>{{itemList.postbtn}}</button> -->
+      </div>
+      <p class="dep">{{itemList.department}} <span>{{itemList.position}}</span></p>
+      <button ion-button color="callPhone" outline item-end (click)="showCall(itemList.userId)">
+        <ion-icon name="call" color="callPhone" class="phoneCall"></ion-icon>  
+      </button>
+    </ion-item>
+<!--  
+    <img [src]="item.imageUrl">
+    <p text-wrap>{{item.description}}</p> -->
+  </accordion-list>
+</ion-content>

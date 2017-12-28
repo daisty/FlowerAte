@@ -1,0 +1,70 @@
+page-payment {
+    //报销付款 开始
+    .sure{
+        font-size: 1.7rem;
+    }
+    #post{
+        width: 100%;
+        background: #f4f4f4;
+        .label-md{
+            color: #333;
+            
+        }
+        .item-md{
+            padding-left: 0;
+        }
+        .item-ios{
+            @extend .item-md
+        }
+        .item-block{
+            .item-inner{
+                padding-left: 16px;
+            }
+        } 
+        #adress{
+            .item-inner{
+                border-bottom: 0 none;
+            }
+            .input-wrapper:after{
+                content:'元'
+            }
+        }
+        .input-address{
+            .text-input{
+                text-align: right;
+            }
+        }
+        #remarks{
+            margin-top: 15px;
+            .item-block.item-ios{
+                .item-inner{
+                    border-bottom: 0 none;
+                }
+            }
+            
+        }
+        .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+            border-bottom: 0 none; 
+        }
+        #block{
+            margin-top: -10px;
+            .textrea{
+                textarea{
+                    resize: none;
+                    margin-left: 0; 
+                }
+            }
+            
+            .item-inner{
+                border-bottom: 0 none;
+            }
+          
+        }
+        .list-md .item-input:last-child{
+            border-bottom: 0 none;
+        }
+    }
+
+    //报销付款 结束
+
+}

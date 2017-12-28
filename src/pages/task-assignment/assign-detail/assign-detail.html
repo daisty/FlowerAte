@@ -1,0 +1,159 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>任务详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="detail">
+  <div class="incident-page">
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail class="avatar" item-start>
+          <img src="assets/imgs/usertitle.png">
+        </ion-thumbnail>
+        <h2>{{taskDetails.execute}}
+          <span>{{taskDetails.executeDepart}}</span>
+        </h2>
+        <p>{{taskDetails.createTime}}</p>
+        <a item-right class="status">{{taskDetails.taskStatus | work}}</a>
+      </ion-item>
+      <ion-item class="leave">
+        <p class="task-text">
+          {{taskDetails.content}}
+        </p>
+      </ion-item>
+      <ion-item>
+        <p class="time-add">
+          <ion-icon name="my-time" color="askforleave" class="cale"></ion-icon>
+          <ion-note>开始时间：
+            <span>{{taskDetails.startTime}}</span>
+          </ion-note>
+        </p>
+        <p class="time-add">
+          <ion-icon name="my-time" color="askforleave" class="cale"></ion-icon>
+          <ion-note>结束时间：
+            <span>{{taskDetails.endTime}}</span>
+          </ion-note>
+        </p>
+      </ion-item>
+    </ion-list>
+    <div class="progress">
+      <ion-list>
+        <ion-item>
+          <ion-label class="text-detail">合同外部项目名称</ion-label>
+          <ion-label>{{taskDetails.project}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">内部项目名称</ion-label>
+          <ion-label>{{taskDetails.innerProject}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">项目表</ion-label>
+          <ion-label>{{taskDetails.table}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">任务类型</ion-label>
+          <ion-label>{{taskDetails.taskType | work}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">优先级</ion-label>
+          <ion-label>{{taskDetails.priority}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">所需时长</ion-label>
+          <ion-label>{{taskDetails.needTime}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <ion-label class="text-detail">实际开始时间</ion-label>
+          <ion-label>{{taskDetails.startExecute}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <ion-label class="text-detail">实际结束时间</ion-label>
+          <ion-label>{{taskDetails.endExecute}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">实际时长</ion-label>
+          <ion-label>{{taskDetails.actualTime1}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <ion-label class="text-detail">未完成时长</ion-label>
+          <ion-label>{{taskDetails.undoneTime1}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="text-detail">任务备注</ion-label>
+          <ion-label>{{taskDetails.remark}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <ion-label class="text-detail">任务问题</ion-label>
+          <ion-label>{{taskDetails.question}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <ion-label class="text-detail">是否发生费用报销</ion-label>
+          <ion-label>{{taskDetails.reimbursement}}</ion-label>
+        </ion-item>
+        <div id="picture-show" *ngIf="taskDetails.taskStatus == 'FINISH' && taskDetails.taskStatus == 'DOING'">
+          <span>附件</span>
+          <div class="certificate-pic">
+            <!-- <img src="../../assets/imgs/userImage1.png"> -->
+            <img *ngFor="let img of taskDetails.photos" src="{{img}}" class="img-eff" />
+          </div>
+        </div>
+      </ion-list>
+      <ion-list *ngIf="taskDetails.taskStatus == 'TOBEAUDITED'">
+        <ion-item>
+          <ion-label class="text-detail">关联任务</ion-label>
+          <ion-label>无</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="none">
+        <ion-item>
+          <p>2017-08-15</p>
+          <p class="sound">语音审核：
+            <span>通过</span>
+          </p>
+        </ion-item>
+      </ion-list>
+      <ion-list class="last-md" *ngIf="taskDetails.taskStatus == 'FINISH'">
+          <ion-item>
+            <ion-label class="text-detail">是否延期完成</ion-label>
+            <ion-label>{{taskDetails.delay}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text-detail">延期时长</ion-label>
+            <ion-label>{{taskDetails.delayTime1}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="text-detail">延长事由</ion-label>
+            <ion-label>{{taskDetails.reportReason}}</ion-label>
+          </ion-item>
+        </ion-list>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="bgColor" id="footer-btn">
+    <div class="check" *ngIf="taskDetails.taskStatus == 'DOING'">
+      <a ion-button class="email-btn" color="white" (click)="getFinished()">
+        <ion-icon name="my-finished" color="energy" class="mail"></ion-icon>
+        确认完成
+      </a>
+      <a ion-button class="email-btn" color="white" (click)="unFinished()">
+        <ion-icon name="my-unfinished" color="noComplete" class="mail"></ion-icon>
+        未完成
+      </a>
+    </div>
+
+    <div class="check" *ngIf="taskDetails.taskStatus == 'TOBEAUDITED'">
+      <a ion-button class="email-btn" color="white"  (click)="gotoCheck(taskDetails.id)">
+        <ion-icon name="my-check" color="energy" class="mail"></ion-icon>
+        手动审核
+      </a>
+      <a ion-button class="email-btn" color="white" (click)="gotoCheck(taskDetails.id,1)">
+        <ion-icon name="my-taskCheck" color="ganament" class="mail"></ion-icon>
+        语音审核
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

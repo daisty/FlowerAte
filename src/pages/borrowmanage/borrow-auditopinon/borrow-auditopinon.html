@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar  color="energy" no-border-bottom>
+    <ion-title class="toCenter">审核意见</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        确认
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="content">
+  <ion-list>
+      <ion-item [ngClass]="{'marginBot-10':!page}">
+        <ion-label>审核身份</ion-label>
+        <ion-select [(ngModel)]="paramObj.lendIndentityStatus" interface='action-sheet' cancelText='取消'>
+          <ion-option value="CHARGER">负责人</ion-option>
+          <ion-option value="FINACER">财务运营部</ion-option>
+          <ion-option value="MANAGER">总经办</ion-option>
+        </ion-select>
+    </ion-item>
+      <my-radio 
+        buttonColor='#limegreen' [(radio)]='paramObj.chargerPass' *ngIf="!page">
+        </my-radio>
+      <ion-item class="marginTop-10" *ngIf="!page">
+        审核原因<br><textarea [(ngModel)]="paramObj.chargerOpinion" placeholder="请输入原因" class="expl"></textarea>
+      </ion-item>
+      <div class="bg" *ngIf="page">
+        <img src="assets/imgs/voiceBg.jpg" alt="">
+      </div>
+      <!--<ion-item class="marginTop-10" *ngIf="page" (click)="startListening()">
+        点击输入语音
+        <div style="white-space: normal;margin-top: 10px;">
+          {{ text }}
+        </div>
+      </ion-item>-->
+      <!--<ion-item class="text no-bottom-border" *ngIf="page">
+        {{ text }}
+      </ion-item>-->
+      <p class="tip" *ngIf="page">
+        {{ text }}
+      </p>
+      <div class="voice" *ngIf="page" (click)="startListening()">
+        <div class="mi">
+          <ion-icon name="my-autocheck" color='white'></ion-icon>
+        </div>
+      </div>
+      
+  </ion-list>
+
+</ion-content>

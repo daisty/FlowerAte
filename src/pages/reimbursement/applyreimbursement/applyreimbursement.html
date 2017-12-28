@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar color="energy">
+    <ion-title>申请报销</ion-title>
+    <ion-buttons end class="commit">
+      <button ion-button (click)="submit()">提交</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="apply">
+  <div id="select">
+    <ion-list>
+      <ion-item>
+        <ion-label>报销发生的时间</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="fixed1" cancelText="取消" doneText="确定" bindon-ngModel="paramObj.occureDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>报销人</ion-label>
+        <ion-select [(ngModel)]="paramObj.reimer" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of lenderList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>负责人</ion-label>
+        <ion-select [(ngModel)]="paramObj.charger" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of lenderList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>地区</ion-label>
+        <ion-select [(ngModel)]="paramObj.area" okText="确定" cancelText="取消" (ngModelChange)="areaCh()">
+          <ion-option *ngFor="let item of areaList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>项目组</ion-label>
+        <ion-select [(ngModel)]="paramObj.projectGroup" okText="确认" cancelText="取消" (ngModelChange)="proFn()">
+          <ion-option *ngFor="let item of proGroupList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>项目名称</ion-label>
+        <ion-select [(ngModel)]="paramObj.project" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of proNameList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>三级科目</ion-label>
+        <ion-select [(ngModel)]="paramObj.thirdSubject" okText="确认" cancelText="取消" (ngModelChange)="thirdFn(paramObj.thirdSubject)">
+          <ion-option *ngFor="let item of thirdList">{{ item.thirdSubject }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>说明</ion-label>
+        <ion-select [(ngModel)]="paramObj.plainInfo" okText="确认" cancelText="取消" (ngModelChange)="explainFn(paramObj.thirdSubject,paramObj.plainInfo)">
+          <ion-option *ngFor="let item of explaisList">{{ item.remark }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>一级科目</ion-label>
+        <ion-select [(ngModel)]="paramObj.firstSubject" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of firstList">{{ item }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>二级科目</ion-label>
+        <ion-select [(ngModel)]="paramObj.secondSubject" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of secondList">{{ item.secondSubject }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item id="noBottom">
+        <ion-label>报销当天任务
+          <span id="optional">(选填)</span>
+        </ion-label>
+        <ion-input type="text" [(ngModel)]='paramObj.dayTask' placeholder="请输入当天任务" class="input-right"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="money">
+        <ion-label>报销金额</ion-label>
+        <ion-input type="text" [(ngModel)]="paramObj.reimMoney" placeholder="请输入金额" class="input-one"></ion-input>|
+        <ion-input type="text" [(ngModel)]="paramObj.ticketQuantity" placeholder="单据数量" item-right class="input-right"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>参与人
+          <span id="optional">(选填)</span>
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="paramObj.attender" placeholder="请输入参与人" class="input-right"></ion-input>
+      </ion-item>
+      <my-radio buttonColor='#limegreen' [(radio)]='paramObj.ticketCondition' title='是否有发票' option1='是' option2='否'>
+      </my-radio>
+      <ion-item>
+        <ion-label>无发票说明</ion-label>
+        <ion-input type="text" [(ngModel)]="paramObj.noTicketRemark" placeholder="请输入说明" class="input-right"></ion-input>
+      </ion-item>
+      <ion-item class="noBBottom">
+        上传凭证
+      </ion-item>
+      <ion-item>
+        <div class="upload">
+          <span class="image" (click)="addImage()">
+            <img class="img" src="assets/imgs/addImage.png">
+          </span>
+          <span class="image" *ngFor="let item of Iamges;let i = index;">
+            <img class="img" src="{{item.url}}">
+            <i (click)="delImage(i)">
+              <img src="assets/imgs/close.png">
+            </i>
+          </span>
+        </div>
+      </ion-item>
+      <ion-item id="item-explanation">
+        <ion-label>补充说明</ion-label>
+      </ion-item>
+      <ion-item id="noBottom">
+        <ion-textarea name="description" [(ngModel)]='paramObj.addContent' class="description" placeholder="例如:交代清楚报销事由"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

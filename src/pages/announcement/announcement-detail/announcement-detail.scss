@@ -1,0 +1,33 @@
+page-announcement-detail {
+    #notice-detail{
+        .notice{
+            h4{
+                padding: 0 15px;
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+            .item{
+                padding-top:0;
+                padding-bottom: 0;
+                .item-inner{
+                    border-bottom: 0;
+                }
+            }
+            .badge{
+                margin:10px 15px;
+                margin-top:0;
+            }
+            .detail-text{
+                color:#677077;
+                padding: 0 15px;
+            }
+            .detail-img{
+                .col{
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}

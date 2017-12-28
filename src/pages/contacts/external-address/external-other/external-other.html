@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar color="headerColor">
+    <ion-title>其他信息</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="otherInfo">
+  <div id="infoOther">
+    <ion-list>
+      <ion-item class="item-list"> 
+        <span>其他关联项目</span>
+        <span>{{exterData.other}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>联系时间频率</span>
+        <span>{{exterData.external}}</span>
+      </ion-item> 
+      <ion-item class="item-list"> 
+        <span>对外联系信息</span>
+        <span>{{exterData.frequency}}</span>
+      </ion-item> 
+      <ion-item class="item-list"> 
+        <span>录入时间</span>
+        <span>{{exterData.writeTime}}</span>
+      </ion-item>   
+    </ion-list>
+  </div>
+</ion-content>

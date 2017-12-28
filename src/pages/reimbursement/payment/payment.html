@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar color="energy">
+    <ion-title>付款</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="successAlert()" class="sure">确认</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="post">
+  <ion-list>
+    <my-radio buttonColor='#limegreen' title='是否预计付款' option1='是' option2='否' [(radio)]='paramObj.payOrPre'>
+    </my-radio>
+    <div *ngIf="paramObj.payOrPre==true">
+      <ion-item>
+        <ion-label>预计时间</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.budgetPayTime"></ion-datetime>
+      </ion-item>
+      <ion-item id="adress">
+        <ion-label>预计付款金额</ion-label>
+        <ion-input type="text" placeholder="请输入金额" class="input-address" [(ngModel)]="paramObj.reimMoney"></ion-input>
+      </ion-item>
+      <ion-item id="remarks">
+        <ion-label>预计付款说明</ion-label>
+      </ion-item>
+      <ion-item id="block">
+        <ion-textarea placeholder="请输入说明" class="textrea" [(ngModel)]='paramObj.receiveTicketCon'></ion-textarea>
+      </ion-item>
+    </div>
+
+    <div *ngIf="paramObj.payOrPre==false">
+      <ion-item>
+        <ion-label>付款来源</ion-label>
+        <ion-select [(ngModel)]="paramObj.payOrigin" interface="popover">
+          <ion-option *ngFor="let item of payList">{{item}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item id="adress">
+        <ion-label>付款金额</ion-label>
+        <ion-input type="text" placeholder="请输入金额" class="input-address" [(ngModel)]="paramObj.reimMoney"></ion-input>
+      </ion-item>
+      <ion-item id="remarks">
+        <ion-label>付款说明</ion-label>
+      </ion-item>
+      <ion-item id="block">
+        <ion-textarea placeholder="请输入说明" class="textrea" [(ngModel)]='paramObj.receiveTicketCon'></ion-textarea>
+      </ion-item>
+    </div>
+
+  </ion-list>
+
+</ion-content>

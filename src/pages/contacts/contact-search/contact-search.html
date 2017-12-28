@@ -1,0 +1,75 @@
+
+<ion-header>
+
+  <ion-navbar color="headerColor">
+    <!-- <ion-title>contactSearch</ion-title> -->
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="搜索联系人或手机号"></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="contact-search">
+  <h4 text-center>没有联系人</h4>
+  <div *ngIf="havePerson">
+    <!-- 内部通讯录 -->
+    <ion-list #scheduleList>
+      <ion-item-group *ngFor="let item of innerContacts" #IonItemGroup>
+        <!-- <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider> -->
+        <ion-item-sliding *ngFor="let i of item.contacts" #slidingItem>
+          <ion-item id="contact-list" >
+            <ion-thumbnail item-start (click)="openInternalPage(i.userId)">
+              <img src="assets/imgs/contact_pic.png">
+            </ion-thumbnail>
+            <h2>{{i.username}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.department}} <span>{{i.position}}</span></p>
+            <!-- <button ion-button color="callPhone" outline item-end (click)="showCall()">
+              <ion-icon name="call" color="callPhone"></ion-icon>  
+            </button> -->
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group> 
+    </ion-list>
+    <!-- 内部通讯录 -->
+
+    <!-- 外部通讯录 -->
+    <ion-list>
+      <ion-item-group *ngFor="let item of exterContacts" #IonItemGroup>
+        <!-- <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider> -->
+        <ion-item-sliding *ngFor="let i of item.contacts" (click)="openOuternalPage(i.id)"#slidingItem>
+          <ion-item id="contact-list">
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/contact_pic.png">
+            </ion-thumbnail>
+            <h2>{{i.username}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.project}} <span>{{i.position}}</span></p>    
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group>
+    </ion-list>
+    <!-- 外部通讯录 -->
+
+    <!-- 商务通讯录 -->
+    <ion-list>
+      <ion-item-group *ngFor="let item of comContacts" #IonItemGroup>
+        <!-- <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider> -->
+        <ion-item-sliding *ngFor="let i of item.contacts" (click)="openBusinessPage(i.id)"#slidingItem>
+          <ion-item id="contact-list">
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/contact_pic.png">
+            </ion-thumbnail>
+            <h2>{{i.customerName}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.customerLevelName}} <span>{{i.customerStatus | customer}}</span></p>    
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group>
+    </ion-list>
+    <!-- 商务通讯录 -->
+  </div>
+</ion-content>

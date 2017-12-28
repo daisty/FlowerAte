@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title id="title-pointer" (click)="show = !show" [ngClass]="{'backActive':tab}">
+      {{seleFont || '全部'}}
+      <ion-icon name="arrow-down" class="down-center"></ion-icon>
+    </ion-title>
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+    <ion-buttons end>
+      <button ion-button class="apply" (click)="apply()">申请报销</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="reimbursement">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content loadingText="Loading more data..."></ion-refresher-content>
+  </ion-refresher>
+  <div id="under-model" *ngIf="show"></div>
+  <div id="select-all" *ngIf="show">
+    <ion-list>
+      <ion-item *ngFor="let item of items; let i = index" [ngClass]="{'active-child':item.value == seleFont}" (click)="selectFilter(item.msg, item.value)">{{item.value}}</ion-item>
+    </ion-list>
+  </div>
+  <div id="status-list">
+    <ion-list>
+      <ion-item *ngFor="let statu of statusList" (click)="toDetail(statu.reimPhoneSelectStatus,statu.id)">
+        <h3 class="title-name">{{statu.reimer}}</h3>
+        <p class="happen">报销发生时间：{{statu.occureDate}}</p>
+        <div class="time-date" item-right>
+          <p class="new-time">{{statu.commitDate}}</p>
+          <button ion-button color="{{statu.reimPhoneSelectStatus | color}}" round>{{statu.reimPhoneSelectStatus | status}}</button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="200px" *ngIf='hideBtn'>
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

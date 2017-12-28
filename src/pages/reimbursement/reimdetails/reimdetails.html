@@ -1,0 +1,134 @@
+<ion-header>
+
+  <ion-navbar color="energy">
+    <ion-title>报销详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content id="details">
+  <ion-list id="top">
+    <ion-item>
+      <h3 class="title-name">{{data.reimer}}</h3>
+      <p class="submit-review">提交时间：{{data.commitDate}}</p>
+      <p class="submit-review">审核时间：{{data.chargerAuditTime}}</p>
+      <div class="btn" item-right>
+        <button ion-button color="{{status | color}}" round class="status-check">{{ status | status }}</button>
+        <p class="money" *ngIf="status == 'HASREIM'">{{data.reimMoney}}元</p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list no-lines>
+    <ion-item>
+      <p class="detail">
+        <span class="title-data">报销单号：</span>
+        <span class="varble">{{data.reimNumber}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">发生时间：</span>
+        <span class="varble">{{data.occureDate}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">报销金额：</span>
+        <span class="varble">{{data.reimMoney}}(元)</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">单据数量：</span>
+        <span class="varble">{{data.ticketQuantity}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">地区：</span>
+        <span class="varble">{{data.area}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">项目名称：</span>
+        <span class="varble">{{data.project}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">负责人：</span>
+        <span class="varble">{{data.charger}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">当天任务：</span>
+        <span class="varble">{{data.dayTask}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">一级科目：</span>
+        <span class="varble">{{data.firstSubject}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">二级科目：</span>
+        <span class="varble">{{data.secondSubject}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">三级科目：</span>
+        <span class="varble">{{data.thirdSubject}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">参与人：</span>
+        <span class="varble">{{data.attender}}</span>
+      </p>
+      <p class="detail detailLong">
+        <span class="title-data">是否具有发票：</span>
+        <span class="varble">{{data.ticketCondition}}</span>
+      </p>
+      <p class="detail detailLong">
+        <span class="title-data">无发票说明：</span>
+        <span class="varble">{{data.noTicketRemark}}</span>
+      </p>
+      <p class="detail">
+        <span class="title-data">补充说明：</span>
+        <span class="varble">{{data.addContent}}</span>
+      </p>
+
+    </ion-item>
+    <div id="picture-show">
+      <span>凭证：</span>
+      <div class="certificate-pic">
+        <img src="assets/imgs/userImage1.png" class="img-eff" />
+        <img src="assets/imgs/userImage2.png" class="img-eff" />
+      </div>
+    </div>
+  </ion-list>
+  <div id="bottom" *ngIf="data.reimPhoneShowStatus =='SENDDETAIL'|| data.reimPhoneShowStatus =='NONE' && data.reimStatus !=='NONE'">
+    <ion-list no-lines id="details-marks">
+      <ion-item class="firstBorder">
+        <p class="bottom-text">
+          <span class="title-data">收件人：</span>
+          <span class="varble">{{data.sendRecevier}}</span>
+        </p>
+        <p class="bottom-text">
+          <span class="title-data">寄件时间：</span>
+          <span class="varble">{{data.sendDate}}</span>
+        </p>
+        <p class="bottom-text">
+          <span class="title-data">地址：</span>
+          <span class="varble">{{data.receiveArea}}{{data.receiveAddr}}</span>
+        </p>
+        <p class="bottom-text">
+          <span class="title-data">备注：</span>
+          <span class="varble">{{data.sendCondition}}</span>
+        </p>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines id="reason">
+      <button ion-item (click)="itemReason()">
+        审核过程/原因
+      </button>
+    </ion-list>
+  </div>
+
+</ion-content>
+
+<ion-footer class="footer-btn" *ngIf="data.reimPhoneShowStatus !=='SENDDETAIL' && data.reimPhoneShowStatus !=='NONE'">
+  <button ion-button full block icon-only *ngIf="data.reimPhoneShowStatus !=='GOCHECK'" class="button" color="{{statusColor}}"
+    (click)="buttonFn(status,data.reimPhoneShowStatus)">{{buttonName}}</button>
+  <ion-row *ngIf="data.reimPhoneShowStatus =='GOCHECK'">
+    <ion-col col-6>
+      <button ion-button full icon-only class="button" color="grey" (click)="buttonFn(status,data.reimPhoneShowStatus,1)">核对有误</button>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button full icon-only class="button" color="danger" (click)="buttonFn(status,data.reimPhoneShowStatus,2)">去付款</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

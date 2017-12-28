@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar color="energy">
+      <!-- <ion-icon name="my-arrow-left" md="md-my-arrow-left" color="white" item-left (click)=""></ion-icon> -->
+      <ion-title>设置</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content id="settings">
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        {{item.title}}
+      </button>
+    </ion-list>
+  </ion-content>

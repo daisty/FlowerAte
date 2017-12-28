@@ -1,0 +1,123 @@
+page-contacts {
+
+    $modal-size: 20vw;
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        border-width: 0 0 0;
+    }
+    .header-md::after{
+        background-image: none;
+    }
+
+    #contacts{
+        background-color: #f4f4f4;
+        position: relative;
+        .list-ios > .item-block:first-child, .list-md > .item-block:first-child{
+            border-top: 0 none;
+        }
+        .list-ios > .item-block:last-child, .list-md > .item-block:last-child{
+            border-bottom: 0 none;
+        }
+        .list-ios, .list-md{
+            margin: 10px 0;
+        }
+        .item-divider-md{
+            background-color: #f4f4f4;
+        }
+        .searchbar-ios{
+            background: #f4f4f4;
+        }
+        .item-divider-md{
+            border-bottom: 0;
+        }
+        #contact-list{
+            border-bottom: 1px solid #eee;
+            padding-right: 20px;
+            &.item-ios .item-inner:last-child{
+                border-bottom: 0;
+            }
+            .button-md{
+                border-radius: 3px;
+            }
+        }
+        .person{
+            font-size: 18px;
+            margin-left: 5px;
+        }
+        p{
+            color: #999;
+            font-size: 1.5rem;
+            span{
+                padding-left: 10px;
+            }
+        }
+        #letter{
+            width: 5%;
+            position: fixed;
+            top: 24%;
+            right: 0;
+            z-index: 100;
+            text-align: center;
+            .indexed-item{
+                font-family: "Arial";
+                font-size: 12px;
+                color: #999;
+                transition: all .3s ease-out;
+                margin: 2px 0;
+                cursor: pointer;
+                &.activate {
+                    transform: scale(1.5);
+                    color: #000;
+                }
+            }
+        }
+
+        .modal {           
+            top: 50%;
+            left: 50%;
+            z-index: 100;
+            position: fixed;
+        
+            pointer-events: none;
+        
+            width: $modal-size;
+            height: $modal-size;
+            line-height: $modal-size;
+            margin-left: -($modal-size * 0.5);
+            margin-top: -($modal-size * 0.5);
+        
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.52);
+            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.16);
+        
+            transition: opacity .5s;
+            opacity: 0;
+        
+            &.show {
+                opacity: 1
+            }
+        
+        }
+    }
+    #toolbar{
+        &.segment-ios .segment-button{
+            border-color: #38c0ff;
+            color: #999;
+            font-size: 1.6rem;
+        }
+        &.segment-ios .segment-button.segment-activated{
+            background-color: #38c0ff;
+            color: #fff;
+        }
+        &.segment-md .segment-button{
+            color: #999;
+            font-size: 1.6rem;
+        }
+        &.segment-md .segment-button.segment-activated{
+            border-color: #38c0ff;
+            color: #38c0ff;
+        }
+    }
+}

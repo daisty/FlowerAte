@@ -1,0 +1,83 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title id="title-pointer" (click)="show = !show" [ngClass]="{'backActive':tab}">
+      {{seleFont || '今日'}}任务汇总
+      <ion-icon name="arrow-down" class="down-center"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="taskSum">
+  <div id="under-model" *ngIf="show"></div>
+  <div id="select-all" *ngIf="show">
+    <ion-list>
+      <ion-item *ngFor="let item of items;let i = index" [ngClass]="{'active-child':item.value == seleFont}" (click)="selectFilter(item.msg,item.value)">{{item.value}}</ion-item>
+    </ion-list>
+  </div>
+  <div class="all-summary">
+    <div class="summary-number">
+      <div class="today-task">
+        <p>{{seleFont}}任务</p>
+        <h1>{{summaryList.todayNum}}</h1>
+      </div>
+      <ion-grid class="three-task">
+        <ion-row>
+          <ion-col col-4 class="how-task">
+            <h2>{{summaryList.engineeringNum}}</h2>
+            <span>工程任务</span>
+          </ion-col>
+          <ion-col col-4 class="how-task">
+            <h2>{{summaryList.admininstrationNum}}</h2>
+            <span>行政任务</span>
+          </ion-col>
+          <ion-col col-4 class="how-task">
+            <h2>{{summaryList.trainingNum}}</h2>
+            <span>培训任务</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-list class="plan-list">
+      <ion-item>
+        <ion-label>计划任务</ion-label>
+        <ion-label class="plan-number">{{summaryList.planNum}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>完成任务</ion-label>
+        <ion-label class="plan-number">{{summaryList.actualNum}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>未完成</ion-label>
+        <ion-label class="plan-number">{{summaryList.unFinishNum}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list class="plan-list">
+      <ion-item>
+        <ion-label>计划总工时(小时)</ion-label>
+        <ion-label class="plan-number">{{summaryList.planTime}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>已完成</ion-label>
+        <ion-label class="plan-number">{{summaryList.actualTime}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>未完成</ion-label>
+        <ion-label class="plan-number">{{summaryList.unFinishTime}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list class="plan-list">
+      <ion-item>
+        <ion-label>上报未完成工时</ion-label>
+        <ion-label class="plan-number">{{summaryList.reportUnFinish}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>未上报未完成工时</ion-label>
+        <ion-label class="plan-number">{{summaryList.unReportUnFinish}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

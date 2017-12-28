@@ -1,0 +1,169 @@
+page-applyreimbursement {
+  #apply {
+    background-color: #f4f4f4; // page-applyreimbursement #apply #select .item-block.item .item-inner:last-child{
+    //     border-bottom:0 none;
+    // }
+    .list-ios {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    #select {
+      width: 100%;
+      .item-ios {
+        padding-left: 0;
+      }
+      .item {
+        @extend .item-ios;
+      }
+      .item-inner {
+        padding-left: 16px;
+      }
+      .item-ios,
+      .item-md {
+        padding: 0px;
+        .item-inner {
+          padding-left: 14px;
+          border-bottom: 0.2px solid #eeecf5;
+          ion-icon {
+            padding-top: 5px;
+          }
+        }
+        &:first-child {
+          border: none;
+        }
+        &:last-child {
+          border: none;
+        }
+        &.noBBottom .item-inner {
+          border-bottom: none;
+        }
+        ion-input {
+          // margin: 8px 0px;
+        }
+      }
+      .upload {
+        display: flex;
+        flex-wrap: wrap;
+        .image {
+          position: relative;
+          margin: 0.5rem;
+          flex: 0 0 29%;
+          .img {
+            width: 100%;
+          }
+          i {
+            width: 1rem;
+            position: absolute;
+            top: -0.75rem;
+            right: -0.6rem;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+      #noBottom {
+        .item-inner {
+          border-bottom: 0 none;
+        }
+        .description {
+          height: 60px;
+          color: #333;
+          display: block;
+          margin-top: -12px;
+        }
+      }
+      #item-explanation {
+        .item-inner {
+          height: 20px;
+          border-bottom: 0 none;
+        }
+      }
+    }
+    #down-center {
+      vertical-align: middle;
+    }
+    .list-ios>.item-block:first-child {
+      border-top: 0 none;
+    }
+    .list-ios>.item-block:last-child {
+      border-bottom: 0 none;
+    }
+    #optional {
+      color: #999;
+    }
+    .input-right {
+      background: #fff;
+      .text-input {
+        text-align: right;
+      }
+    }
+    .input-one {
+      display: flex;
+      align-items: center;
+      border-right: 1px solid #dddddd;
+      .text-input:first-child {
+        width: 9rem;
+        text-align: right;
+      }
+    }
+    .money {
+      .input-one:after {
+        content: '元 ';
+        margin-right: 10px;
+      }
+    }
+    .current {
+      background-color: #07ba56;
+    }
+    #textarea {
+      .item-inner {
+        border-bottom: 0 none;
+      }
+    }
+  }
+  .item-select .label-md {
+    color: #333;
+  }
+  .item-input .label-md {
+    color: #333;
+  }
+  .item-datetime {
+    .label-md {
+      color: #333;
+    }
+  }
+  .commit {
+    font-size: 20px;
+    color: #fff;
+  } // .item-block.item{
+  //     .item-inner{
+  //         border-bottom:0 none !important;
+  //     }
+  // }
+  .list>.item-block:last-child {
+    border-bottom: 0 none;
+  }
+  #single {
+    display: flex;
+    justify-content: flex-end;
+    .radio-input {
+      display: flex;
+      width: 20px;
+      height: 20px; // background: #fcf;
+      border: 1px solid #999;
+      border-radius: 50%;
+      font-style: normal;
+    }
+  }
+  #explanation {
+    height: 90px;
+    .item-inner {
+      border-bottom: 0 none;
+    }
+  } // #block-say{
+  //     height: 60PX;
+  // }
+}

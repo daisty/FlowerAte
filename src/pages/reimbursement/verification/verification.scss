@@ -1,0 +1,20 @@
+page-verification {
+    #incorrect{
+        background-color: #f4f4f4;
+        .text-reason{
+            background-color: #fff;
+            padding: 8px 16px 0;
+            .wrong{
+                font-size: 18px;
+            }
+            .textarea{
+                height: 10rem;
+                font-size: 16px;
+            }
+            .text-input-md{
+                margin-left: 0;
+            }
+        }
+    }
+
+}

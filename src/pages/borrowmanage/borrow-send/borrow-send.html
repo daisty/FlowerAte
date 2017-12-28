@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar  color="energy" no-border-bottom>
+    <ion-title class="toCenter">寄件</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        确认
+      </button>
+   </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="content">
+  <ion-list>
+    <ion-item>
+        <ion-label>收件人</ion-label>
+        <ion-select cancelText="取消" okText="确定" [(ngModel)]="paramObj.sendRecevier" placeholder="现金" interface="action-sheet">
+          <ion-option >王博文</ion-option>
+          <ion-option >孟小宝</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>寄件时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="paramObj.sendDate" cancelText="取消" doneText="确认" max="2020-10-31"></ion-datetime>
+    </ion-item>
+    <ion-item class="money">
+      <ion-label>地区</ion-label>
+      <ion-select cancelText="取消" okText="确定" [(ngModel)]="paramObj.receiveArea" placeholder="现金" interface="action-sheet">
+          <ion-option >广州</ion-option>
+          <ion-option >深圳</ion-option>
+          <ion-option >湛江</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item  class="money">
+      <ion-label>详细地址</ion-label>
+      <ion-input type="text" item-right [(ngModel)]="paramObj.receiveAddr" placeholder="请输入详情地址"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>单据数量</ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.documentQuantity"></ion-input>
+    </ion-item>
+    <ion-item class="noBBottom marginTop-10">
+      还款说明
+    </ion-item>
+    <ion-item>
+      <textarea [(ngModel)]="paramObj.sendCondition" placeholder="请输入备注" class="expl"></textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

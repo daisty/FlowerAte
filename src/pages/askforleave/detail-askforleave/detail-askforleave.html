@@ -1,0 +1,128 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>请假详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="details">
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/userImage1.png">
+        </ion-avatar>
+        <h2>{{details.name}}
+          <span>{{details.depart}}</span>
+        </h2>
+        <p>{{details.date}}</p>
+        <button ion-button color="{{sta | color }}" round item-end class="status">{{sta | status}}</button>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="time">
+        <p>
+          <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+          <span>开始时间：{{details.startTime}}</span>
+        </p>
+        <p>
+          <ion-icon name="my-time" md="md-my-time" color="askforleave" class="afl" clear></ion-icon>
+          <span>结束时间：{{details.endTime}}</span>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list no-lines class="info" [ngClass]="{'noBtn': isleader && (details.aduitStatus=='DOING')}">
+    <ion-item>
+      <p class="detail">
+        <span>项目表</span>
+        <span>{{details.depart}}</span>
+      </p>
+      <p class="detail">
+        <span>职位</span>
+        <span>{{details.position}}</span>
+      </p>
+      <p class="detail">
+        <span>请假类型</span>
+        <span>{{details.vacateType | status}}</span>
+      </p>
+      <p class="detail">
+        <span>请假时长</span>
+        <span>{{details.time}}小时</span>
+      </p>
+      <p class="detail">
+        <span>是否符合提前</span>
+        <span>{{details.advance}}</span>
+      </p>
+      <p class="detail">
+        <span>是否符合时长</span>
+        <span>{{details.conform}}</span>
+      </p>
+      <div class="detail">
+        <span>请假事由</span>
+        <div>{{details.reason}}</div>
+      </div>
+      <div id="picture-show">
+        <span>附件</span>
+        <div class="certificate-pic">
+          <img *ngFor="let img of details.photos" src="{{img}}" class="img-eff" />
+        </div>
+      </div>
+    </ion-item>
+
+
+    <ion-item class="sendWho">
+      主送人
+    </ion-item>
+    <div *ngFor="let aa of details.sons">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/userImage1.png">
+        </ion-avatar>
+        <h2>{{aa.name}}
+        </h2>
+        <p>{{aa.date}}</p>
+        <div class="talk">{{aa.advice}}</div>
+        <button ion-button color="{{aa.aduitStatus | color }}" round item-end class="status">{{aa.aduitStatus|status}}</button>
+      </ion-item>
+      <div class="sendLine">
+        <div></div>
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/userImage1.png">
+      </ion-avatar>
+      <h2>{{details.name}}
+      </h2>
+      <button ion-button color="danger" round item-end class="status">审核中</button>
+    </ion-item>
+
+
+    <ion-item class="sendWho" *ngIf="details.carbon">
+      抄送人
+    </ion-item>
+    <ion-item *ngIf="details.carbon">
+      <div class="upload sendTo">
+        <span class="image" *ngFor="let aa of sendTo">
+          <img class="img" src="assets/imgs/userImage2.png">
+          <p>{{aa}}</p>
+        </span>
+      </div>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-row id="gotoCheck" *ngIf="isleader && (details.aduitStatus=='DOING')">
+    <ion-col col-6 (click)="gotoCheck()">
+      <ion-icon name="my-check" md="md-my-check" class="afl afl1" clear></ion-icon>手动审核</ion-col>
+    <ion-col col-6  (click)="gotoCheck(1)">
+      <ion-icon name="my-autocheck" md="md-my-autocheck" class="afl afl2" clear></ion-icon>语音审核</ion-col>
+  </ion-row>
+
+</ion-content>

@@ -1,0 +1,42 @@
+page-accordion-list {
+
+    #organize-list{
+        background-color: #f4f4f4;
+        #contact-list{
+            border-bottom: 1px solid #f4f4f4;
+            padding-right: 20px;
+            &.item-ios .item-inner:last-child{
+                border-bottom: 0;
+            }
+            .button-md{
+                border-radius: 3px;
+                box-shadow: 0 0 0 0;
+            }
+
+            .h22{
+                display: flex;
+                align-content: center;
+                h2{
+                    line-height: 2.5;
+                }
+                .person{
+                    transform: rotate(0);
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    margin:0 10px;
+                }
+            }
+
+            .dep{
+                font-size: 14px;
+                span{
+                    padding-left: 10px;
+                }
+            }
+            .phoneCall{
+                transform: rotate(0);
+            }
+        }
+    }
+}

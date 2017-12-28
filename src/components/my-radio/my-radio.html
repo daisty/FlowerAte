@@ -1,0 +1,9 @@
+<ion-item >
+    <h3>{{title || "是否通过"}}</h3> 
+    <div item-right class="dpflex" #abc>
+        <span class="radio dpflex" (click)="radio = true"><i *ngIf='radio' [style.background]="buttonColor"></i></span>
+        <span> {{option1 || "通过"}}</span>
+        <span class="radio dpflex" (click)="radio = false"><i *ngIf='!radio'></i></span>
+        <span>{{option2 || "不通过"}}</span>
+    </div>  
+  </ion-item>

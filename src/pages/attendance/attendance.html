@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="energy"  no-border-bottom>
+    <ion-title id="title-text">考勤打卡</ion-title>
+    <my-back text="首页" (click)="closeModal()"></my-back>
+  </ion-navbar>
+</ion-header>
+
+<!-- 考勤打卡 -->
+<ion-content id="card">
+  <div class="calen">
+    <ion-list class="card">
+      <ion-item class="time-day">
+        <ion-label>
+          <ion-icon name="calendar" color="calendar" class="cale"></ion-icon>
+          <!-- <i class="cale"></i> -->
+          <span class="today">今天</span>
+        </ion-label>
+        <ion-input [(ngModel)]="myDate" readonly ></ion-input>
+      </ion-item>
+    </ion-list>
+    
+  </div>
+  <div class="record-list" *ngIf="punchCard">
+    <ul class="line-work">
+      <li>
+        <div class="workTime">
+          <span>8:30</span>
+          <span>上班</span>
+        </div>
+        <button ion-button color="danger" round  class="no-card" *ngIf="!orCard">未打卡</button>
+        <div class="leg" *ngIf="orCard">
+          <div class="work-status">
+            <i class="work-time">{{goWork.time}}</i>
+            <span class="work-up">{{goWork.punchType | work}}</span>
+            <div class="btn-status" item-right>
+              <button ion-button color="{{goWork.punchStatus | workcolor}}" round  class="statu">{{goWork.punchStatus | workstatus}}</button>
+            </div>
+          </div>
+
+          <div class="work-address">
+              <ion-icon name="pin" color="pin" class="earth"></ion-icon>
+              <span class="detail-post">{{goWork.area}}</span>
+          </div>
+        </div>
+      </li>
+      <li class="dash">
+
+      </li>
+      <li>
+        <div class="workTime">
+          <span>18:00</span>
+          <span>下班</span>
+        </div>
+        <button ion-button color="danger" round  class="no-card" *ngIf="!notData">未打卡</button>
+        <div class="leg" *ngIf="notData">
+          <div class="work-status">
+            <i class="work-time">{{afterWork.time}}</i>
+            <span class="work-up">{{afterWork.punchType | work}}</span>
+            <div item-right>
+              <button ion-button color="{{afterWork.punchStatus | workcolor}}" round  class="statu">{{afterWork.punchStatus | workstatus}}</button>
+            </div>
+          </div>
+          <div class="work-address">
+              <ion-icon name="pin" color="pin" class="earth"></ion-icon>
+              <span class="detail-post">{{afterWork.area}}</span>
+          </div>
+        </div> 
+      </li> 
+    </ul>
+  </div>
+  <div class="bg" *ngIf="!punchCard">
+    <img src="assets/imgs/card.png" alt="">
+    <p>亲~上班打卡了哟</p>
+  </div>
+  <div class="fixed-bottom">
+      <div class="address_pin">
+          <ion-icon name="pin" color="pin" class="earth"></ion-icon>
+          <span [ngStyle]="{'color':position[1]}">{{position[0]}}</span>
+        </div>
+        <button ion-button color="energy" block class="btn-work" (click)="toWork()">打卡</button>
+  </div>
+</ion-content>

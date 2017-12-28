@@ -1,0 +1,419 @@
+
+@font-face {font-family: "Ionicons";
+    src: url('../assets/fonts/iconfont.eot?t=1512368779964'); /* IE9*/
+    src: url('../assets/fonts/iconfont.eot?t=1512368779964#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../assets/fonts/iconfont.woff?t=1512368779964') format('woff'),
+    url('../assets/fonts/iconfont.ttf?t=1512368779964') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../assets/fonts/iconfont.svg?t=1512368779964#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .icon {
+    font-family:"Ionicons" !important;
+    font-size:28px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  
+.ion-ios-my-avatar:before { content: "\e633";}
+.ion-md-my-avatar:before { content: "\e633";}
+
+.ion-ios-my-arrow-left:before { content: "\e603"; }
+.ion-md-my-arrow-left:before { content: "\e603"; }
+
+.ion-ios-my-arrow-right:before { content: "\e612"; }
+.ion-md-my-arrow-right:before { content: "\e612"; }
+
+//  员工工资
+.ion-ios-my-employee-salary:before { content: "\e653"; }
+.ion-md-my-employee-salary:before { content: "\e653"; }
+
+//  加班
+.ion-ios-my-overtime:before { content: "\e62d"; }
+.ion-md-my-overtime:before { content: "\e62d"; }
+
+//  奖金资金
+.ion-ios-my-reward:before { content: "\e632"; }
+.ion-md-my-reward:before { content: "\e632"; }
+
+//  工作交接
+.ion-ios-my-work-transfer:before { content: "\e604"; }
+.ion-md-my-work-transfer:before { content: "\e604"; }
+
+//  报销
+.ion-ios-my-reimbursement:before { content: "\e6fc"; }
+.ion-md-my-reimbursement:before { content: "\e6fc"; }
+
+//  任务分配
+.ion-ios-my-role:before { content: "\e678"; }
+.ion-md-my-role:before { content: "\e678"; }
+
+//  项目提成
+.ion-ios-my-projects:before { content: "\e600"; }
+.ion-md-my-projects:before { content: "\e600"; }
+
+
+//  地址
+.ion-ios-my-address:before { content: "\e705"; }
+.ion-md-my-address:before { content: "\e705"; }
+
+//  项目技术人员奖金发放申请、项目资金
+.ion-ios-my-bonus-payment:before { content: "\e621"; }
+.ion-md-my-bonus-payment:before { content: "\e621"; }
+
+//  请假
+.ion-ios-my-leave:before { content: "\e799"; }
+.ion-md-my-leave:before { content: "\e799"; }
+
+//  进度同步
+.ion-ios-my-progress-sync:before { content: "\e679"; }
+.ion-md-my-progress-sync:before { content: "\e679"; }
+
+//  借款
+.ion-ios-my-loan:before { content: "\e614"; }
+.ion-md-my-loan:before { content: "\e614"; }
+
+//  市场招待
+.ion-ios-my-market:before { content: "\e60c"; }
+.ion-md-my-market:before { content: "\e60c"; }
+
+//  客户信息
+.ion-ios-my-customer-info:before { content: "\e64b"; }
+.ion-md-my-customer-info:before { content: "\e64b"; }
+
+//  竞争对手
+.ion-ios-my-competitor:before { content: "\e6ab"; }
+.ion-md-my-competitor:before { content: "\e6ab"; }
+
+//  商务洽谈
+.ion-ios-my-business-meetings:before { content: "\e638"; }
+.ion-md-my-business-meetings:before { content: "\e638"; }
+
+//  银行流水
+.ion-ios-my-bank-water:before { content: "\e78a"; }
+.ion-md-my-bank-water:before { content: "\e78a"; }
+
+//  资金流水
+.ion-ios-my-capital-flow:before { content: "\e662"; }
+.ion-md-my-capital-flow:before { content: "\e662"; }
+
+//  记账凭证
+.ion-ios-my-bookkeeping-vouchers:before { content: "\e676"; }
+.ion-md-my-bookkeeping-vouchers:before { content: "\e676"; }
+
+//  明细账
+.ion-ios-my-detail-account:before { content: "\e76b"; }
+.ion-md-my-detail-account:before { content: "\e76b"; }
+
+//  首页
+.ion-ios-homeImag:before { content: "\e605"; }
+.ion-md-homeImag:before { content: "\e605"; }
+.ion-ios-homeImag-outline:before { content: "\e602"; }
+
+//  代办事件
+.ion-ios-event:before { content: "\e606"; }
+.ion-md-event:before { content: "\e606"; }
+.ion-ios-event-outline:before { content: "\e607"; }
+
+//  通讯录
+.ion-ios-my-contacts:before { content: "\e608"; }
+.ion-md-my-contacts:before { content: "\e608"; }
+.ion-ios-my-contacts-outline:before { content: "\e609"; }
+
+//  我的
+.ion-ios-selfCenter:before { content: "\e60a"; }
+.ion-md-selfCenter:before { content: "\e60a"; }
+.ion-ios-selfCenter-outline:before { content: "\e60b"; }
+
+//关闭按钮
+.ion-ios-my-close:before { content: "\e631"; }
+.ion-md-my-close:before { content: "\e631"; }
+
+//招聘
+.ion-ios-my-recruitment:before { content: "\e601"; }
+.ion-md-my-recruitment:before { content: "\e601"; }
+
+//评估体系
+.ion-ios-my-evaluation-system:before { content: "\e6ac"; }
+.ion-md-my-evaluation-system:before { content: "\e6ac"; }
+
+//公司战略
+.ion-ios-my-company-strategy:before { content: "\e71d"; }
+.ion-md-my-company-strategy:before { content: "\e71d"; }
+
+//简介管理
+.ion-ios-my-introduction-management:before { content: "\e67a"; }
+.ion-md-my-introduction-management:before { content: "\e67a"; }
+
+//公司资质
+.ion-ios-my-company-qualification:before { content: "\e63b"; }
+.ion-md-my-company-qualification:before { content: "\e63b"; }
+
+//公司企业文化
+.ion-ios-my-company-culture:before { content: "\e6d5"; }
+.ion-md-my-company-culture:before { content: "\e6d5"; }
+
+//项目提成
+.ion-ios-my-project-commission:before { content: "\e690"; }
+.ion-md-my-project-commission:before { content: "\e690"; }
+
+//业务提成
+.ion-ios-my-business-commission:before { content: "\e811"; }
+.ion-md-my-business-commission:before { content: "\e811"; }
+
+//管理提成
+.ion-ios-my-manage-commission:before { content: "\e6a9"; }
+.ion-md-my-manage-commission:before { content: "\e6a9"; }
+
+//资金方
+.ion-ios-my-capital-party:before { content: "\e6fd"; }
+.ion-md-my-capital-party:before { content: "\e6fd"; }
+
+//内部推荐奖
+.ion-ios-my-internal-award:before { content: "\e613"; }
+.ion-md-my-internal-award:before { content: "\e613"; }
+
+//公司奖励
+.ion-ios-my-company-rewards:before { content: "\e667"; }
+.ion-md-my-company-rewards:before { content: "\e667"; }
+
+//公司补助
+.ion-ios-my-company-subsidy:before { content: "\e62f"; }
+.ion-md-my-company-subsidy:before { content: "\e62f"; }
+
+//员工节日福利
+.ion-ios-my-employee-benefits:before { content: "\e60d"; }
+.ion-md-my-employee-benefits:before { content: "\e60d"; }
+
+//员工信息
+.ion-ios-my-employee-information:before { content: "\e615"; }
+.ion-md-my-employee-information:before { content: "\e615"; }
+
+//通讯录
+.ion-ios-my-contacts:before { content: "\e625"; }
+.ion-md-my-contacts:before { content: "\e625"; }
+
+//入职管理
+.ion-ios-my-entry-management:before { content: "\e655"; }
+.ion-md-my-entry-management:before { content: "\e655"; }
+
+//商业保险
+.ion-ios-my-business-insurance:before { content: "\e69e"; }
+.ion-md-my-business-insurance:before { content: "\e69e"; }
+
+//技能晋升
+.ion-ios-my-skills-promotion:before { content: "\e754"; }
+.ion-md-my-skills-promotion:before { content: "\e754"; }
+
+//等级晋升
+.ion-ios-my-leve-promotion:before { content: "\e665"; }
+.ion-md-my-leve-promotion:before { content: "\e665"; }
+
+//岗位轮换
+.ion-ios-my-job-rotation:before { content: "\e68e"; }
+.ion-md-my-job-rotation:before { content: "\e68e"; }
+
+//综合素养调研
+.ion-ios-my-comprehensive-literacy:before { content: "\e62c"; }
+.ion-md-my-comprehensive-literacy:before { content: "\e62c"; }
+
+//系统功能
+.ion-ios-my-system-functions:before { content: "\e629"; }
+.ion-md-my-system-functions:before { content: "\e629"; }
+
+//反馈
+.ion-ios-my-feedback:before { content: "\e62e"; }
+.ion-md-my-feedback:before { content: "\e62e"; }
+
+//招投标流程
+.ion-ios-my-bidding:before { content: "\e616"; }
+.ion-md-my-bidding:before { content: "\e616"; }
+
+//商务合同
+.ion-ios-my-business-contract:before { content: "\e617"; }
+.ion-md-my-business-contract:before { content: "\e617"; }
+
+//商务总结
+.ion-ios-my-business-summary:before { content: "\e60e"; }
+.ion-md-my-business-summary:before { content: "\e60e"; }
+
+//合同单价
+.ion-ios-my-contract-price:before { content: "\e67a"; }
+.ion-md-my-contract-price:before { content: "\e67a"; }
+
+//地区工作进度
+.ion-ios-my-work-progress:before { content: "\e691"; }
+.ion-md-my-work-progress:before { content: "\e691"; }
+
+//往来账务
+.ion-ios-my-current-account:before { content: "\e6dd"; }
+.ion-md-my-current-account:before { content: "\e6dd"; }
+
+//资金回拢
+.ion-ios-my-capital-around:before { content: "\e6dc"; }
+.ion-md-my-capital-around:before { content: "\e6dc"; }
+
+//项目前期活动费
+.ion-ios-my-pre-fee:before { content: "\e630"; }
+.ion-md-my-pre-fee:before { content: "\e630"; }
+
+//项目内费用
+.ion-ios-my-project-cost:before { content: "\e600"; }
+.ion-md-my-project-cost:before { content: "\e600"; }
+
+//管理费用
+.ion-ios-my-manage-fee:before { content: "\e636"; }
+.ion-md-my-manage-fee:before { content: "\e636"; }
+
+//应交税金
+.ion-ios-my-tax-payable:before { content: "\e619"; }
+.ion-md-my-tax-payable:before { content: "\e619"; }
+
+//平衡记分卡
+.ion-ios-my-balanced-scorecard:before { content: "\e773"; }
+.ion-md-my-balanced-scorecard:before { content: "\e773"; }
+
+//出车费
+.ion-ios-my-taxi-fee:before { content: "\e688"; }
+.ion-md-my-taxi-fee:before { content: "\e688"; }
+
+//油卡充值
+.ion-ios-my-fuel-card-recharge:before { content: "\e722"; }
+.ion-md-my-fuel-card-recharge:before { content: "\e722"; }
+
+//房屋费用
+.ion-ios-my-housing-costs:before { content: "\e659"; }
+.ion-md-my-housing-costs:before { content: "\e659"; }
+
+//设备购买
+.ion-ios-my-equipment-purchase:before { content: "\e60f"; }
+.ion-md-my-equipment-purchase:before { content: "\e60f"; }
+
+//设备入库盘点
+.ion-ios-my-equipment-storage:before { content: "\e626"; }
+.ion-md-my-equipment-storage:before { content: "\e626"; }
+
+//合同保管
+.ion-ios-my-contract-custody:before { content: "\e654"; }
+.ion-md-my-contract-custody:before { content: "\e654"; }
+
+//资金流水账
+.ion-ios-my-capital-flow:before { content: "\e662"; }
+.ion-md-my-capital-flow:before { content: "\e662"; }
+
+//回款管理
+.ion-ios-my-back-management:before { content: "\e64d"; }
+.ion-md-my-back-management:before { content: "\e64d"; }
+
+//成本明细
+.ion-ios-my-cost-detail:before { content: "\e727"; }
+.ion-md-my-cost-detail:before { content: "\e727"; }
+
+//资金准备
+.ion-ios-my-capital-preparation:before { content: "\e61f"; }
+.ion-md-my-capital-preparation:before { content: "\e61f"; }
+
+//资金核对
+.ion-ios-my-check-funds:before { content: "\e610"; }
+.ion-md-my-check-funds:before { content: "\e610"; }
+
+//出车管理
+.ion-ios-my-out-car:before { content: "\e61b"; }
+.ion-md-my-out-car:before { content: "\e61b"; }
+
+//费用管理
+.ion-ios-my-expense:before { content: "\e636"; }
+.ion-md-my-expense:before { content: "\e636"; }
+
+//薪资核算
+.ion-ios-my-salary-account:before { content: "\e6ad"; }
+.ion-md-my-salary-account:before { content: "\e6ad"; }
+
+//社保缴费
+.ion-ios-my-social-payment:before { content: "\e622"; }
+.ion-md-my-social-payment:before { content: "\e622"; }
+
+//通信集成
+.ion-ios-my-communication-integration:before { content: "\e656"; }
+.ion-md-my-communication-integration:before { content: "\e656"; }
+
+//对外税务
+.ion-ios-my-foreign-taxation:before { content: "\e61d"; }
+.ion-md-my-foreign-taxation:before { content: "\e61d"; }
+
+//工商管理
+.ion-ios-my-business-management:before { content: "\e72f"; }
+.ion-md-my-business-management:before { content: "\e72f"; }
+
+//请假-请假
+.ion-ios-my-qingjia:before { content: "\e628";}
+.ion-md-my-qingjia:before { content: "\e628"; }
+
+//请假-时间
+.ion-ios-my-time:before { content: "\e623"; }
+.ion-md-my-time:before { content: "\e623"; }
+
+//请假-手动审核
+.ion-ios-my-check:before {content: "\e624"; }
+.ion-md-my-check:before {content: "\e624"; }
+
+//请假-语音审核
+.ion-ios-my-autocheck:before {content: "\e620"; }
+.ion-md-my-autocheck:before {content: "\e620"; }
+
+// 任务分配-语音审核
+.ion-ios-my-taskCheck:before { content: "\e62a";}
+.ion-md-my-taskCheck:before { content: "\e62a";}
+
+//聊天
+.ion-ios-my-chat:before {content: "\e635";}
+.ion-md-my-chat:before {content: "\e635";}
+
+//聊天语音
+.ion-ios-my-chat-voice:before {content: "\e62b";}
+.ion-md-my-chat-voice:before {content: "\e62b";}
+
+//微信
+.ion-ios-my-chat-we:before {content: "\e677";}
+.ion-md-my-chat-we:before {content: "\e677";}
+
+//QQ
+.ion-ios-my-chat-we:before {content: "\e634";}
+.ion-md-my-chat-we:before {content: "\e634";}
+
+//播放
+.ion-ios-my-chat-we:before {content: "\e733";}
+.ion-md-my-chat-we:before {content: "\e733";}
+
+//任务拆分：是
+.ion-ios-my-pass:before { content: "\e642";}
+.ion-md-my-pass:before { content: "\e642";}
+
+//任务拆分：否
+.ion-ios-my-nopass:before { content: "\e63f";}
+.ion-md-my-nopass:before { content: "\e63f";}
+
+//确认完成
+.ion-ios-my-finished:before { content: "\e640";}
+.ion-md-my-finished:before { content: "\e640";}
+
+//未完成
+.ion-ios-my-unfinished:before { content: "\e63e";}
+.ion-md-my-unfinished:before { content: "\e63e";}
+
+//确认接收
+.ion-ios-my-confirm-reception:before { content: "\e641";}
+.ion-md-my-confirm-reception:before { content: "\e641";}
+
+//任务上报
+.ion-ios-my-mission-report:before { content: "\e646";}
+.ion-md-my-mission-report:before { content: "\e646";}
+
+//再次分发
+.ion-ios-my-distribute-again:before { content: "\e645";}
+.ion-md-my-distribute-again:before { content: "\e645";}
+
+//完成情况
+.ion-ios-my-completion:before { content: "\e644";}
+.ion-md-my-completion:before { content: "\e644";}

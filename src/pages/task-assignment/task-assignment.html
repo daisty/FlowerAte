@@ -1,0 +1,107 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title id="taskTration">任务分配</ion-title>
+    <my-back text="首页"  *ngIf="tab"  (click)="closeModal()"></my-back>
+    <ion-buttons end *ngIf="summary">
+      <button ion-button icon-only class="summary" (click)="taskSummary()">
+        汇总
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top color="white">
+    <ion-segment color="white" [(ngModel)]="duty">
+      <ion-segment-button value="distribution" (click)="tasK(duty)">
+        我分发的任务
+      </ion-segment-button>
+      <ion-segment-button value="run" (click)="tasK(duty)">
+        我执行的任务
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="incident">
+  <div class="incident-page" [ngSwitch]="duty">
+    <div *ngSwitchCase="'distribution'">
+      <ion-list *ngFor="let init of issue" (click)="selectDetail(init.taskStatus,init.id)">
+        <ion-item>
+          <ion-thumbnail class="avatar" item-start>
+            <img src="assets/imgs/usertitle.png">
+            <!-- <img src="{{imgsUrl + init.execute + '?userToken=' + userToken}}" alt="正在加载"> -->
+          </ion-thumbnail>
+          <h2>{{init.execute}}
+            <span>{{init.executeDepart}}</span>
+          </h2>
+          <p class="task-time">{{init.createTime}}</p>
+          <a class="statuss" item-right>{{init.taskStatus | work}}</a>
+        </ion-item>
+        <ion-item class="leave">
+          <p class="task-text">
+            {{init.content}}
+          </p>
+          <p class="task-files" *ngFor="let initPic of init.photos">
+            <img src="{{initPic}}" alt="">
+          </p>
+        </ion-item>
+        <ion-item>
+          <p class="time-add">
+            <ion-icon name="my-time" color="leaveColor" class="cale"></ion-icon>
+            <ion-note>开始时间：
+              <span>{{init.startTime}}</span>
+            </ion-note>
+          </p>
+          <p class="time-add">
+            <ion-icon name="my-time" color="leaveColor" class="cale"></ion-icon>
+            <ion-note>结束时间：
+              <span>{{init.endTime}}</span>
+            </ion-note>
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'run'">
+      <ion-list *ngFor="let execut of execution" (click)="exectDetail(execut.taskStatus,execut.id)">
+        <ion-item>
+          <ion-thumbnail class="avatar" item-start>
+            <img src="assets/imgs/usertitle.png">
+            <!-- <img src="{{imgsUrl + execut.initiate + '?userToken=' + userToken}}" alt="正在加载"> -->
+          </ion-thumbnail>
+          <h2>{{execut.initiate}}
+            <span>{{execut.depart}}</span>
+          </h2>
+          <p class="task-time">{{execut.createTime}}</p>
+          <a class="statuss" item-right>{{execut.taskStatus | work}}</a>
+        </ion-item>
+        <ion-item class="leave">
+          <p class="task-text">
+            {{execut.content}}
+          </p>
+          <p class="task-files" *ngFor="let initPic2 of execut.photos">
+            <img src="{{initPic2}}" alt="">
+          </p>
+        </ion-item>
+        <ion-item>
+          <p class="time-add">
+            <ion-icon name="my-time" color="leaveColor" class="cale"></ion-icon>
+            <ion-note>开始时间：
+              <span>{{execut.startTime}}</span>
+            </ion-note>
+          </p>
+          <p class="time-add">
+            <ion-icon name="my-time" color="leaveColor" class="cale"></ion-icon>
+            <ion-note>结束时间：
+              <span>{{execut.endTime}}</span>
+            </ion-note>
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event,pet)" threshold="200px" *ngIf='hideBtn'>
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

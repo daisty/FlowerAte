@@ -1,0 +1,11 @@
+<ion-nav [root]="rootPage"></ion-nav>
+<ion-content id="content" *ngIf="!rootPage">
+<div class="viewShowBig" >
+    <!--<ion-icon name="my-close" color="energy" (click)="close()"></ion-icon>-->
+    <img src="assets/imgs/advertising.jpg" alt="">
+    <a class="click" (click)="close()">
+        <img src="assets/imgs/advertising1.png" alt="">
+        <span>进入ISSP</span>
+    </a>
+</div>
+</ion-content>

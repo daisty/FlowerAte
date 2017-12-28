@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar  color="footerNav" no-border-bottom>
+    <ion-title class="toCenter">任务上报</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        提交
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="content">
+  <ion-list>
+      <my-radio 
+        buttonColor='#limegreen' [(radio)]='paramObj.delay'>
+        </my-radio>
+      <ion-item class="marginTop-10">
+        <ion-label class="timeLay">延期时长</ion-label>
+        <ion-input type="number" [(ngModel)]="paramObj.delayTime" placeholder="请输入时长" class="input-right"></ion-input>
+      </ion-item>
+      <ion-item class="marginTop-10">
+        审核原因<br><textarea [(ngModel)]="paramObj.reportReason" placeholder="请输入原因" class="expl"></textarea>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

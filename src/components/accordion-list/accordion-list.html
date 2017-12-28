@@ -1,0 +1,22 @@
+<ion-list class="accordion-list">
+  <ion-list-header no-lines no-padding>
+    <ion-item detail-none
+            (click)="toggleAccordion()"
+            class="accordion-header"
+            [class.active]="expanded">
+
+        {{ title }} <span>({{numberData}}人)</span>
+     
+        <ion-icon
+          item-right
+          name="ios-arrow-forward" color="light">
+        </ion-icon>
+    </ion-item>
+    <section #abc
+             [style.background]="contentColor"
+             [class.active]="expanded"
+             class="accordion-content">
+      <ng-content></ng-content>
+    </section>
+  </ion-list-header>
+</ion-list>

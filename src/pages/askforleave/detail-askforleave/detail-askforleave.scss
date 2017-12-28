@@ -1,0 +1,223 @@
+page-detail-askforleave {
+  #details {
+    background-color: #f4f4f4;
+    .item-ios {
+      ion-avatar {
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .talk {
+        white-space: normal;
+      }
+      h2 {
+        margin-bottom: 5px;
+        span {
+          font-size: 15px;
+          color: #999;
+          margin-left: 10px;
+        }
+      }
+      .status {
+        width: 70px;
+        height: 26px;
+      }
+    }
+    .sendLine {
+      padding: 0;
+      background-color: #fff;
+      height: 40px;
+      div {
+        margin-left: 11%;
+        width: 1px;
+        height: 40px;
+        background-color: #c2dae5;
+      }
+    }
+    .card {
+      width: 100%;
+      margin: 0;
+      margin-top: 4px;
+      box-shadow: none;
+      .card-header {
+        padding: 0;
+        .item-ios {
+          ion-avatar {
+            img {
+              width: 60px;
+              height: 60px;
+            }
+          }
+          h2 {
+            margin-bottom: 5px;
+            span {
+              font-size: 15px;
+              color: #999;
+              margin-left: 10px;
+            }
+          }
+          .status {
+            width: 70px;
+            height: 26px;
+          }
+        }
+      }
+      .card-content {
+        padding: 0;
+        padding-left: 18px;
+        .icon.afl {
+          font-size: 18px;
+          vertical-align: sub;
+        }
+        .time {
+          padding: 10px 0;
+          p {
+            color: #999;
+            font-size: 13px;
+            &:first-child {
+              margin-bottom: 5px;
+            }
+            span {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+    .info {
+      margin-top: 10px;
+      margin-bottom: 0;
+      &.noBtn{
+        margin-bottom: 60px;
+      }
+      .detail {
+        margin: 20px 0px;
+        display: flex;
+         :first-child {
+          display: inline-block;
+          width: 9rem;
+          font-size: 14px;
+          color: #999;
+          vertical-align: top;
+        }
+         :last-child {
+          color: #333;
+          font-size: 16px;
+          white-space: normal;
+        }
+        &:first-child {
+          margin-top: 5px;
+        }
+      }
+      #picture-show {
+        display: flex;
+        width: 100%;
+        padding-bottom: 10px;
+        span {
+          display: inline-block;
+          width: 30%;
+          font-size: 14px;
+          color: #999;
+        }
+        .certificate-pic {
+          display: flex;
+          flex-wrap: wrap;
+          width: 70%;
+          .img-eff {
+            display: inline-block;
+            width: 30%;
+            height: 80px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .sendWho.item-block {
+        min-height: 2.4rem;
+        color: #999;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .label {
+        margin-bottom: 0;
+        .upload {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 5px 0;
+          .image {
+            position: relative;
+            margin: 0.5rem;
+            flex: 0 0 29%;
+            .img {
+              width: 100%;
+            }
+            p {
+              font-size: 16px;
+              color: #999;
+              text-align: center;
+            }
+            i {
+              width: 1.25rem;
+              position: absolute;
+              top: -0.75rem;
+              right: -0.6rem;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .sendTo {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 5px 0;
+          .image {
+            position: relative;
+            margin: 0.5rem;
+            flex: 0 0 21%;
+            text-align: center;
+            .img {
+              width: 85%;
+              border-radius: 60px;
+            }
+            p {
+              font-size: 16px;
+              color: #333;
+            }
+            i {
+              position: absolute;
+              width: 1.3rem;
+              top: 0.2rem;
+              right: -0.5rem;
+            }
+          }
+        }
+      }
+    }
+    #gotoCheck {
+      background-color: #fff;
+      height: 50px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      .col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .afl {
+          margin-right: 10px;
+        }
+        .afl1 {
+          color: #38c0ff;
+        }
+        .afl2 {
+          color: #1bc373;
+        }
+        &:first-child {
+          border-right: 1px solid #f4f4f4;
+        }
+      }
+    }
+  }
+}

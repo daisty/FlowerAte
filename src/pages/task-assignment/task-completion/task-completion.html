@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>完成情况</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="submit()">
+        提交
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="content">
+  <div id="select">
+    <ion-list>
+      <ion-item class="borderB">
+        <ion-label>任务开始时间</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.startExecute"></ion-datetime>
+      </ion-item>
+      <ion-item class="borderB">
+        <ion-label>任务结束时间</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.endExecute"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>实际时长（小时）</ion-label>
+        <ion-input type="number" placeholder="请输入时长" class="input-right" bindon-ngModel="paramObj.actualTime"></ion-input>
+      </ion-item>
+      <my-radio buttonColor='#limegreen' [(radio)]='paramObj.reimbursement' title="是否发生费用报销" option1="是" option2="否">
+      </my-radio>
+      <ion-item class="part">
+        <ion-label>工作总结</ion-label>
+      </ion-item>
+      <ion-item class="reason">
+        <ion-textarea name="description" class="description" placeholder="例如:工作进度" [(ngModel)]="paramObj.summary"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="part">
+        附件（病假需要上传医生证明，可补传 ）
+      </ion-item>
+
+      <ion-item>
+        <div class="upload accessory">
+          <span class="image" (click)="addImage()">
+            <img class="img" src="assets/imgs/addImage.png">
+          </span>
+          <span class="image" *ngFor="let item of Iamges;let i = index;">
+            <img class="img" src="{{item.url}}" (click)="showBig(item.url)">
+            <i (click)="delImage(i)">
+              <img src="assets/imgs/close.png">
+            </i>
+          </span>
+        </div>
+      </ion-item>
+      <!-- <div formArrayName="formArray">
+        <div class="problem" *ngFor="let control of myForm.controls['formArray'].controls;; let i = index;">
+          <ion-item class="part">
+            <ion-label>问题</ion-label>
+          </ion-item>
+          <ion-item class="reason">
+            <ion-textarea name="description" class="description" formControlName="propertyOne" placeholder="例如:没任务"></ion-textarea>
+          </ion-item>
+        </div>
+      </div> -->
+      <div>
+        <div class="problem">
+          <ion-item class="part">
+            <ion-label>问题</ion-label>
+          </ion-item>
+          <ion-item class="reason">
+            <ion-textarea name="description" class="description" placeholder="例如:没任务"></ion-textarea>
+          </ion-item>
+        </div>
+      </div>
+      <a class="add-question" (click)="addItem()">添加</a>
+    </ion-list>
+  </div>
+</ion-content>

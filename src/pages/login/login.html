@@ -1,0 +1,28 @@
+
+<ion-header id="login-header">
+
+</ion-header>
+
+
+<ion-content id="content">
+  <ion-list id="login-bg">
+    <ion-item class="title" no-lines>
+      <a class="logo-img">
+        <img src="assets/imgs/logo.png" alt="">
+      </a>
+    </ion-item>
+    <ion-item  class="ipt">
+        <ion-icon ios="ios-person" md="md-person" item-start color="loginBtn"></ion-icon>
+        <ion-input placeholder="请填写您的账号" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    <ion-item class="ipt">
+        <ion-icon ios="ios-unlock" md="md-unlock" item-start color="loginBtn"></ion-icon>
+        <ion-input placeholder="请填写您的密码" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item class="login ipt noLine" no-lines>
+      <button ion-button block (click)="login(userName,password)" color="loginBtn" >
+        登录
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

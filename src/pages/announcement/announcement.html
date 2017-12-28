@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title id="title-text">公告管理</ion-title>
+    <my-back text="首页" (click)="closeModal()"></my-back>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="notice-list">
+  <div class="notice" *ngFor="let item of items" (click)="details($event, item)">
+    <ion-card-header>
+      {{item.title}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/userImage1.png">
+        </ion-avatar>
+        <h2>{{item.author}}</h2>
+        <p>{{item.publishDate}}</p>
+        <button ion-button item-end color="orange">{{item.classify}}</button>
+      </ion-item>
+      <div class="text">
+        {{item.publishContent}}
+      </div>
+      <ion-row class="notice-img">
+        <ion-col col col-4 *ngFor="let item1 of item.photos">
+          <img src="{{item1}}">
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </div>
+</ion-content>

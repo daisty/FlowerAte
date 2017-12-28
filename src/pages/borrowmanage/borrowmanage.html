@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title id="title-pointer" (click)="show = !show" [ngClass]="{'backActive':tab}">
+        {{seleFont || '全部'}}<ion-icon name="arrow-down" class="down-center"></ion-icon>
+    </ion-title>
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+   <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="toPage()">
+        申请借款
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="borrowManage-c">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content  loadingText="Loading more data..."></ion-refresher-content>
+  </ion-refresher>
+  <div id="under-model" *ngIf="show"></div>
+  <div id="select-all" *ngIf="show">
+    <ion-list>
+      <ion-item *ngFor="let item of items;let i = index"  [ngClass]="{'active-child':item.value == seleFont}" (click)="selectFilter(item.msg,item.value)">{{item.value}}</ion-item>
+    </ion-list>
+  </div>
+  <div id="status-list">
+    <ion-list>
+      <ion-item *ngFor="let statu of statusList" (click)="goDetail(statu.lendPhoneSelectStatus,statu.id)">
+          <h3 class="title-name">{{statu.lender}}</h3>
+          <p class="happen">{{statu.createTime | time}}</p>
+          <div class="time-date" item-right>
+              <p class="new-time">{{statu.commitTime | time }}</p>
+              <button ion-button color="{{statu.lendPhoneSelectStatus | color }}" round>{{statu.lendPhoneSelectStatus | status}}</button>
+          </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="200px" *ngIf='hideBtn'>
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中..."
+     >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

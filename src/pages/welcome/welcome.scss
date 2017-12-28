@@ -1,0 +1,85 @@
+page-welcome {
+    #welcome{
+      // background: color($colors, energy);
+      overflow: hidden;
+      #home-bg{
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 230px;
+        background: color($colors, energy);
+      }
+      #content {
+        position: relative;
+        margin-top: 150px;
+        background-color: white;
+        padding-top: 175px;
+      }
+      #profile-info {
+        position: absolute;
+        top: -95px;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+      }
+      #avatar-img{
+        display: block;
+        border-radius: 50%;
+        width: 128px;
+        height: 128px;
+        margin: 30px auto 0;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+      }
+      #person-name{
+        font-size: 2.6rem;
+        color: #333;
+        margin-left: 20px;
+        #person{
+          margin-left: 10px;
+          vertical-align: top;
+        }
+      }
+      #profile-text{
+        font-size: 2rem;
+        color: #333;
+        margin-left: 20px;
+        span{
+          padding-left: 10px;
+        }
+      }
+
+        .news-color{
+          color: #999999;
+          font-size: 1.5rem;
+        }
+        .item ion-icon[item-right]{
+          display: flex;
+          align-items: center;
+        }
+        .item-ios ion-icon[item-right]{
+          display: flex;
+          align-items: center;
+        }
+        .list-ios[inset] > .item:last-child{
+          border-bottom: 1px solid #c8c7cc;
+        }
+        .list[inset] > .item:last-child{
+          border-bottom: 1px solid #c8c7cc;
+        }
+      }
+    
+    .list > .item-block:first-child{
+      border-top: 0 none;
+    }
+   
+    .list-ios > .item-block:first-child{
+      border-top: 0 none;
+    }
+    .esc-button{
+      width: 80%;
+      margin:30px auto 0;
+      .button-inner{
+        font-size: 18px;
+      }
+    }
+}

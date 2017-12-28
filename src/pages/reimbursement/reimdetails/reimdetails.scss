@@ -1,0 +1,193 @@
+page-reimdetails {
+  #details {
+    background: #f4f4f4;
+    .list-ios {
+      margin-bottom: 0;
+      margin-top: .5px;
+    }
+    .list-md {
+      @extend .list-ios;
+    }
+    #top {
+      &.list-ios>.item-block:first-child {
+        border-top: 0 none;
+      }
+      &.list-md>.item-block:last-child {
+        border-bottom: 0.55px solid #c8c7cc;
+      }
+      &.list-wp>.item-block:last-child {
+        border-bottom: 1px solid #c8c7cc;
+      }
+      .btn {
+        text-align: center;
+        .status-check {
+          font-size: 16px;
+        }
+        p {
+          font-size: 18px;
+          color: #f00;
+        }
+      }
+    }
+    .title-name {
+      font-size: 22px;
+      color: #333;
+    }
+    .submit-review {
+      font-size: 18px;
+      color: #999;
+    }
+    #status-check {
+      font-size: 16px;
+    }
+    .detail {
+      margin: 5px 0px;
+      font-size: 18px!important; // font-size: 2rem;
+       :first-child {
+        display: inline-block;
+        width: 8rem;
+        text-align: right;
+      }
+       :last-child {
+        color: black;
+      }
+    }
+    .detailLong {
+        :first-child {
+            width: 11rem;
+            text-align: right;
+        }
+    }
+    #content {
+      &.list>.item-block {
+        padding-left: 10px;
+      }
+      &.list>.item-block:last-child {
+        border-bottom: 0 none;
+      }
+      .item-block {
+        &:first-child {
+          padding-top: 10px;
+        }
+        .item-inner {
+          height: 2.5rem;
+        }
+        .left-text {
+          font-size: 18px;
+          display: flex;
+          .title-data {
+            display: inline-block;
+            width: 8rem;
+            margin-right: 10px;
+            text-align: right;
+          }
+          .varble {
+            display: inline-block;
+            flex: 1;
+            color: #333; // word-wrap: break-word; 
+            // word-break: normal; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    #bottom {
+      height: auto;
+      overflow: hidden;
+      #details-marks {
+        background: #fff;
+        margin: 0;
+        width: 100%;
+        .firstBorder {
+          border-bottom: 0;
+          &:first-child {
+            padding-top: 10px;
+            border-top: 1px solid #dbdbdb;
+          }
+          &.item-block {
+            &:first-child {
+              padding-top: 10px;
+            }
+            .bottom-text {
+              font-size: 18px;
+              display: flex;
+              padding-bottom: 10px;
+              .title-data {
+                display: inline-block;
+                width: 8rem;
+                margin-right: 10px;
+                text-align: right;
+              }
+              .varble {
+                display: inline-block;
+                flex: 1;
+                color: #333; // word-wrap: break-word; 
+                // word-break: normal; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+    #button {
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+    }
+    #picture-show {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      padding-bottom: 10px;
+      span {
+        display: inline-block;
+        width: 8.8rem;
+        text-align: right;
+        font-size: 1.8rem;
+        color: #999;
+        margin-right: 10px;
+      }
+      .certificate-pic {
+        display: flex;
+        flex-wrap: wrap;
+        .img-eff {
+          display: inline-block;
+          max-width: 100%;
+          height: 90px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    #reason {
+      margin: 15px 0;
+    }
+    #toChecked {
+      display: flex;
+      .check-wrong {
+        flex: 1;
+        border-radius: 0; // margin: 0;
+        margin: {
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+      .pay {
+        @extend .check-wrong
+      }
+    }
+  }
+  .footer-btn{
+    .col{
+      padding:0;
+    }
+  }
+}

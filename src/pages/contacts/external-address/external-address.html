@@ -1,0 +1,78 @@
+
+<ion-header>
+
+  <ion-navbar color="contactHead">
+      <my-back text="返回" (click)="closeModal()"></my-back>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="contactInternal">
+  <div id="inter">
+    <div class="person-top">
+      <ion-avatar class="avatar-head">
+        <img src="assets/imgs/contact_pic.png">
+        <ion-icon name="my-avatar" color="{{exterData.sex | sex}}" class="person"></ion-icon>
+      </ion-avatar>
+      <h2>{{exterData.username}}</h2>
+      <p class="post">{{exterData.project}} <span>{{exterData.position}}</span></p>
+    </div>
+  </div>
+  <div id="infoList">
+    <ion-list>
+      <ion-item class="item-list"> 
+        <span>电话</span>
+        <span>{{exterData.phone}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>邮箱</span>
+        <span>{{exterData.email}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>员工编号</span>
+        <span>{{exterData.number}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>单位</span>
+        <span>{{exterData.unit}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>主要负责</span>
+        <span>{{exterData.responsible}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>地区</span>
+        <span>{{exterData.area}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>填写人</span>
+        <span>{{exterData.writer}}</span>
+      </ion-item>
+      <ion-item class="item-list"> 
+        <span>备注</span>
+        <span>{{exterData.remark}}</span>
+      </ion-item>
+      <ion-item (click)="itemOther(exterData.id)">
+        其他
+        <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="lightprimary" clear item-right class="right-arraw"></ion-icon>
+      </ion-item>  
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="bgColor" id="footer-btn">
+      <a ion-button class="email-btn" color="white" start>
+          <ion-icon name="mail" color="energy" class="mail"></ion-icon>
+          邮件
+        </a>
+        <a ion-button class="email-btn" color="white" (click)="showCall()">
+            <ion-icon name="call" color="green" class="mail"></ion-icon>
+          电话
+        </a>
+        <a ion-button class="email-btn" color="white" end>
+          <ion-icon name="my-chat" color="chatColor" class="mail"></ion-icon>
+          聊天
+      </a>
+  </ion-toolbar>
+</ion-footer>

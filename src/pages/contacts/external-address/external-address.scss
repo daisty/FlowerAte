@@ -1,0 +1,154 @@
+.alert-ios .alert-button{
+    color: #38BFFF;
+}
+.alert-md .alert-button{
+    color: #38BFFF;
+}
+page-external-address {
+
+    .header-md::after{
+        background-image: url();
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        border-width: 0;
+    
+    }
+    #contactInternal{
+        position: relative;
+        background-color: #f4f4f4;
+        #inter{
+           width: 100%;
+            position: fixed;
+            left: 0;
+            height: 222px;
+            z-index: 100;
+            background-image: linear-gradient(#1db1fd, #5c59e6);
+            // background-color: #38c0ff;
+            .person-top{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                .avatar-head{
+                    position: relative;
+                    .person{
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 12%;
+                        bottom: 2%;
+                        font-size: 17px;
+                        text-align: center;
+                        background-color: #fff;
+                        border-radius: 50%;
+                    }
+                }
+                h2{
+                    font-size: 21px;
+                  
+                }
+                .post{
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-top: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    span{
+                        padding-left: 10px;
+                        
+                    }
+                }
+            }
+        }
+
+        #infoList{
+            margin-top: 222px;
+            margin-bottom: 50px;
+            .list-ios > .item-block:first-child{
+                border-top: 0 none;
+            }
+            .list-ios > .item-block:last-child{
+                border-bottom: 0;
+            }
+            .right-arraw{
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+            }
+            .item-list{
+                display: flex;
+                padding-left: 0;
+                &:last-child{
+                    border-bottom: 0;
+                }
+                span{
+                    display: inline-block;
+                    
+                    &:first-child{
+                        width: 10rem;
+                        color: #666;
+                        padding-left: 16px;
+                    }
+                    &:first-child{
+                        flex: 0 0 20%;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-ios .toolbar-ios:first-child .toolbar-background-ios{
+        border-width:0;
+    }
+    .footer-md .toolbar-md:first-child .toolbar-background-md{
+        border-width:0;
+    }
+    #footer-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 0;
+        .toolbar-background-ios{
+            background: 0;
+        }
+        .toolbar-background-md{
+            background: 0;
+        }
+        .toolbar-content-md{
+
+            .email-btn{
+                height: 56px;
+            }
+        }
+        .button-md{
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.12);
+        }
+        .email-btn{
+            // flex: 0 0 48%;
+            width: 33%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            margin: 0;
+            font-size: 18px;
+            &:last-child{
+                margin-right: -4px;
+            }
+            .mail{
+                display: flex;
+                align-self: center;
+                text-align: center;
+                margin-right: 10px;
+            }
+        }
+    }
+    .footer-md::before{
+        top: 0;
+    }
+    .alert-ios .alert-button{
+        color: #38BFFF;
+    }
+}

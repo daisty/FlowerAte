@@ -1,0 +1,36 @@
+accordion-list {
+    background-color: #f4f4f4;
+    .nomargin {
+        margin: 0 !important;
+    }
+    .accordion-list{
+        margin-bottom: 15px;
+    }
+    .accordion-header {
+        color: #333;
+        .item-inner {
+            margin-left: 0 !important;
+        }
+
+        ion-icon {
+            transition: all .25s ease-in;
+            transform: rotate(0);
+        }
+    }
+
+    .active ion-icon {
+        transform: rotate(90deg);
+    }
+
+    .accordion-content {
+        transition: 0.3s ease-in-out;
+        &.active {
+            // padding: .75rem;
+            border-top: 1px solid #f4f4f4;
+        }
+    }
+
+    .label {
+        margin: 0px;
+    }
+}

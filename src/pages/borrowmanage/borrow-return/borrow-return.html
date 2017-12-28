@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar  color="energy" no-border-bottom>
+    <ion-title class="toCenter">还款</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        确认
+      </button>
+   </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="content">
+  <ion-list>
+    <ion-item>
+        <ion-label>还款方式</ion-label>
+        <ion-select cancelText="取消" okText="确定" [(ngModel)]="paramObj.returnWays" placeholder="现金" interface="action-sheet">
+          <ion-option *ngFor="let item of payList">{{ item }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>还款时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="paramObj.returnDate" cancelText="取消" doneText="确认" max="2020-10-31"></ion-datetime>
+    </ion-item>
+    <ion-item class="money">
+      <ion-label>实际金额</ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.reimMoney" placeholder="请输入金额"></ion-input>
+    </ion-item>
+    <ion-item  class="money">
+      <ion-label>退回金额</ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.returnMoney" placeholder="请输入金额"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>是否有单据</ion-label>
+        <ion-select cancelText="取消" okText="确定" [(ngModel)]="paramObj.invoice" placeholder="是否有单据" interface="action-sheet">
+          <ion-option>是</ion-option>
+          <ion-option>否</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="noBBottom marginTop-10">
+      上传凭证
+    </ion-item>
+    <ion-item>
+      <div class="upload">
+        <span class="image"><img class="img" src="assets/imgs/addImage.png"></span>
+        <span class="image" *ngFor="let item of Iamges;let i = index;"><img class="img" src="{{item.url}}"><i (click)="delImage(i)"><img src="assets/imgs/close.png"></i></span>
+      </div>
+    </ion-item>
+    <ion-item class="noBBottom marginTop-10">
+      还款说明
+    </ion-item>
+    <ion-item>
+      <textarea placeholder="请输出说明" [(ngModel)]="paramObj.returnRemark" class="expl"></textarea>
+    </ion-item>
+    <ion-item class="marginTop-10" (click)="send()">
+        寄件
+        <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="energy" clear item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

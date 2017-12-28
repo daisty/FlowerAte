@@ -1,0 +1,42 @@
+{
+  "name": "issp-mobile-page-8",
+  "app_id": "43d8c7d3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path":"/askforleave",
+      "proxyUrl":"http://192.168.0.57:51510"
+    },
+    {
+      "path":"/announcement",
+      "proxyUrl":"http://192.168.0.57:51128"
+    },
+    {
+      "path": "/contact",
+      "proxyUrl": "http://192.168.0.65:51310"
+    },
+    {
+      "path": "/user",
+      "proxyUrl": "http://192.168.0.58:51702"
+    },
+    {
+      "path": "/home",
+      "proxyUrl": "http://192.168.0.54:51302"
+    },
+    {
+      "path": "/attend",
+      "proxyUrl": "http://192.168.0.57:51510"
+    },
+    {
+      "path": "/task",
+      "proxyUrl": "http://192.168.0.58:51508"
+    },
+    {
+      "path": "/",
+      "proxyUrl": "http://192.168.0.54:51216"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title class="toCenter">审核意见</ion-title>
+    <ion-buttons end>
+      <button ion-button class="submit" (click)="confirm()">确认</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="reim-auditopinon">
+  <my-radio buttonColor='#limegreen' [(radio)]='paramObj.chargerAuditStatus'> 
+  </my-radio>
+  <ion-item class="marginTop-10">
+    审核原因
+    <br>
+    <textarea [(ngModel)]="paramObj.auditAdvice" placeholder="请输入原因" class="expl"></textarea>
+  </ion-item>
+</ion-content>

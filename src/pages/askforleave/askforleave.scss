@@ -1,0 +1,101 @@
+page-askforleave {
+  .head{
+    .headTitle{
+      text-align: center;
+    }
+  }
+  #askforleaveList {
+    background-color: #f4f4f4;
+    #btnFun {
+      position: fixed;
+      z-index: 9999;
+      width: 100%;
+      background-color: #fff;
+      .segment-button {
+        border: 0;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        color: #999;
+        &.segment-activated {
+          color: #38c0ff;
+          border-bottom: 4px solid #38c0ff;
+          background-color: #fff;
+        }
+        &:first-child {
+          border-right: 1px solid #f4f4f4;
+        }
+      }
+    }
+    .list {
+      margin-top:60px;
+      .card {
+        width: 100%;
+        margin: 12px 0;
+        box-shadow: none;
+        .card-header {
+          padding: 0;
+          .item-ios {
+            ion-avatar {
+              img {
+                width: 60px;
+                height: 60px;
+              }
+            }
+            h2 {
+              margin-bottom: 5px;
+              span {
+                font-size: 15px;
+                color: #999;
+                margin-left: 5px;
+              }
+            }
+            .status {
+              width: 70px;
+              height: 26px;
+            }
+          }
+        }
+        .card-content {
+          padding: 0;
+          padding-left: 18px;
+          .icon.afl {
+            font-size: 20px;
+            vertical-align: middle;
+          }
+          .type {
+            padding-bottom: 10px;
+            padding-top: 5px;
+            border-bottom: 1px solid #f4f4f4;
+            .afl-res {
+              font-size: 15px;
+              color: #333;
+            }
+            .afl-type {
+              font-size: 13px;
+              color: #999;
+              margin-left: 10px;
+            }
+          }
+          .time {
+            padding: 10px 0;
+            p {
+              color: #999;
+              font-size: 13px;
+              &:first-child {
+                margin-bottom: 5px;
+              }
+              span {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .nomTop{
+      margin-top: 0;
+    }
+  }
+
+}

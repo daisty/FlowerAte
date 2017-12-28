@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar color="energy" no-border-bottom>
+    <ion-title class="toCenter">借款详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="content">
+    <ion-list>
+      <ion-item>
+          <h3 class="title-name">{{ data.lender }}</h3>
+          <p class="happen">提交时间: {{ data.createTime }}</p>
+          <div class="time-date" item-right>
+              <button ion-button color="{{statusColor}}" round>{{ status | status}}</button>
+          </div>
+      </ion-item>
+      <ion-item  class="no-bottom-border">
+        <p class="detail1">
+          <span>预计借款时间：</span><span>{{ data.estimateLendDate }}</span>
+        </p>
+        <p class="detail1">
+          <span>借款金额：</span><span>{{ data.money }}(元)</span>
+        </p>
+        <p class="detail1">
+          <span>借款方式：</span><span>{{ data.lendWay }}</span>
+        </p>
+        <p class="detail1">
+          <span>地区：</span><span>{{ data.area }}</span>
+        </p>
+        <p class="detail1">
+          <span>项目名称：</span><span>{{ data.projectName }}</span>
+        </p>
+        <p class="detail1">
+          <span>项目组：</span><span>{{ data.projectGroup }}</span>
+        </p>
+        <p class="detail1">
+          <span>负责人：</span><span>{{ data.charger }}</span>
+        </p>
+        <p class="detail1">
+          <span>一级科目：</span><span>{{ data.firstSubject }}</span>
+        </p>
+        <p class="detail1">
+          <span>二级科目：</span><span>{{ data.secondSubject }}</span>
+        </p>
+        <p class="detail1">
+          <span>三级科目：</span><span>{{ data.thirdSubject }}</span>
+        </p>
+        <p class="detail1">
+          <span>参与人：</span><span>{{ data.attender }}</span>
+        </p>
+        <p class="detail1">
+          <span>商品链接：</span><span>{{ data.goodsLink }}</span>
+        </p>
+        <p class="detail1">
+          <span>说明：</span><span>{{ data.explains }}</span>
+        </p>
+        <p class="detail1">
+          <span>补充说明：</span><span>{{ data.lendReson }}</span>
+        </p>
+        <p class="voucher">
+          <span>凭证：</span>
+          <span class="img">
+            <!--<i><img src="assets/imgs/userImage1.png"></i>-->
+          </span>
+        </p>
+      </ion-item>
+      <ion-item  class="no-bottom-border" *ngIf="data.lendRetunStatus == 'WAITRETURNCHECK'">
+        <p class="detail1">
+          <span>还款方式：</span><span>{{data.returnWays}}</span>
+        </p>
+        <p class="detail1">
+          <span>还款时间：</span><span>{{data.returnDate}}</span>
+        </p>
+        <p class="detail1">
+          <span>实际用款：</span><span>{{data.reimMoney}}(元)</span>
+        </p>
+        <p class="detail1">
+          <span>退回金额：</span><span>{{data.returnMoney}}(元)</span>
+        </p>
+        <p class="detail1">
+          <span>还款说明：</span><span>{{data.returnRemark}}</span>
+        </p>
+        <p class="voucher">
+          <span>凭证：</span>
+          <span class="img">
+            <!--<i><img src="assets/imgs/userImage1.png"></i>
+            <i><img src="assets/imgs/userImage2.png"></i>-->
+          </span>
+        </p>
+        <p class="detail1">
+          <span>收件人：</span><span>{{data.sendRecevier}}</span>
+        </p>
+        <p class="detail1">
+          <span>寄件时间：</span><span>{{data.sendDate}}</span>
+        </p>
+        <p class="detail1">
+          <span>地址：</span><span>{{data.receiveAddr}}</span>
+        </p>
+        <p class="detail1">
+          <span>寄件备注：</span><span>{{data.sendCondition}}</span>
+        </p>
+      </ion-item>
+    </ion-list>
+    <ion-list class="paddingBot-20">
+      <ion-item class="no-bottom-border no-top-border" (click)="season(data.id)" *ngIf="status !== 'WAITAUDIT'">
+          审核过程/原因
+          <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="lightprimary" clear item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+    <div class="btnPar">
+      <button ion-button icon-only color="{{status=='WAITTHAW'?'orangel':'red'}}" class="pay" *ngIf="data.phoneShowRight" (click)="buttonFn(status,data.lendRetunStatus)">
+        {{buttonName || '待定'}}
+      </button>
+      <button ion-button icon-only color="ganament" class="pay" *ngIf="status=='WAITAUDIT'" (click)="buttonFn(status,data.lendRetunStatus,1)">
+        语音审核
+      </button>
+   </div>
+</ion-content>

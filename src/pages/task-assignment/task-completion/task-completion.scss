@@ -1,0 +1,126 @@
+page-task-completion {
+  #content{
+    background-color: #f4f4f4;
+  }
+  #select {
+    background-color: #f4f4f4;
+    .list-ios {
+      .item-block:last-child {
+        border: 0;
+      }
+    }
+    .borderB{
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .label{
+      color: #333;
+    }
+    .item-inner {
+      border: 0;
+    }
+    .part {
+      margin-top: 10px;
+    }
+    .border-tb {
+      border-top: 1px solid #f4f4f4;
+      border-bottom: 1px solid #f4f4f4;
+    }
+    .reason {
+      border: 0;
+      textarea {
+        margin: 0;
+        // height: 100px;
+        .text-input{
+          resize: 0;
+        }
+      }
+    }
+    .sendWho.item-block {
+      min-height: 2.4rem;
+      color: #999;
+    }
+    .label {
+      margin-bottom: 0;
+      margin-top: 2px;
+      display: inline-block;
+      .upload {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 0;
+        &.accessory {
+          .image{
+            .img {
+              height: 115px;
+            }
+          }
+        }
+        .image {
+          position: relative;
+          margin: 0.5rem;
+          flex: 0 0 29%;
+          .img {
+            width: 100%;
+          }
+          p {
+            font-size: 16px;
+            color: #999;
+            text-align: center;
+          }
+          i {
+            width: 1.45rem;
+            position: absolute;
+            top: -0.75rem;
+            right: -0.6rem;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .sendTo {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px 0;
+        .image {
+          position: relative;
+          margin: 0.5rem;
+          flex: 0 0 29%;
+          text-align: center;
+          .img {
+            width: 85%;
+            border-radius: 60px;
+          }
+          p {
+            font-size: 16px;
+            color: #333;
+          }
+          i {
+            position: absolute;
+            width: 1.3rem;
+            top: 0.2rem;
+            right: -0.5rem;
+          }
+        }
+      }
+    }
+  }
+  my-radio {
+    .item {
+      margin-top: 10px;
+      font-size: 1.6rem;
+    }
+  }
+  input {
+    text-align: right;
+  } // .hide{
+  //   opacity: 0;
+  // }
+
+  .add-question{
+    display: block;
+    font-size: 1.6rem;
+    color: #38c0ff;
+    padding-left: 16px;
+    padding-top: 10px;
+  }
+}

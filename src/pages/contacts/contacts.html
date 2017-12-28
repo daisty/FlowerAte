@@ -1,0 +1,116 @@
+
+<ion-header>
+  <ion-navbar  color="footerNav" text-center>
+    <ion-title>通讯录</ion-title>
+    <ion-buttons end >
+      <button ion-button icon-only (click)="showSearch()">
+        <ion-icon name='search'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar no-border-top no-border-bottom color="white">
+    <ion-segment [(ngModel)]="contactodd" id="toolbar" (ngModelChange)="contsctChange()">
+      <ion-segment-button value="internal" (click)="inter(contactodd)">
+        内部通讯录
+      </ion-segment-button>
+      <ion-segment-button value="external" (click)="inter(contactodd)">
+        外部通讯录
+      </ion-segment-button>
+      <ion-segment-button value="business" (click)="inter(contactodd)">
+        商务通讯录
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content id="contacts" (ionScroll)="onScroll()">
+  <ion-list>
+    <ion-item (click)="showOgranize()">
+        <ion-label>按组织结构查看</ion-label>
+        <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div [ngSwitch]="contactodd">
+    <!-- 内部通讯录 -->
+    <ion-list *ngSwitchCase="'internal'" #scheduleList>
+      <ion-item-group *ngFor="let item of innerContacts" #IonItemGroup>
+        <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider>
+        <ion-item-sliding *ngFor="let i of item.contacts" #slidingItem>
+          <ion-item id="contact-list" >
+            <ion-thumbnail item-start (click)="openInternalPage(i.userId)">
+              <img src="{{imgsUrl + i.username}}">
+              <!-- <img src="assets/imgs/contact_pic.png"> -->
+            </ion-thumbnail>
+            <h2>{{i.username}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.department}} <span>{{i.position}}</span></p>
+            <button ion-button color="callPhone" outline item-end (click)="showCall()">
+              <ion-icon name="call" color="callPhone"></ion-icon>  
+            </button>
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group> 
+    </ion-list>
+    <!-- 内部通讯录 -->
+
+    <!-- 外部通讯录 -->
+    <ion-list *ngSwitchCase="'external'">
+      <ion-item-group *ngFor="let item of exterContacts" #IonItemGroup>
+        <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider>
+        <ion-item-sliding *ngFor="let i of item.contacts" #slidingItem>
+          <ion-item id="contact-list">
+            <ion-thumbnail item-start (click)="openOuternalPage(i.id)">
+              <img src="assets/imgs/contact_pic.png">
+            </ion-thumbnail>
+            <h2>{{i.username}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.project}} <span>{{i.position}}</span></p>
+            <button ion-button color="callPhone" outline item-end (click)="showCall()">
+              <ion-icon name="call" color="callPhone"></ion-icon>  
+            </button>    
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group>
+    </ion-list>
+    <!-- 外部通讯录 -->
+
+    <!-- 商务通讯录 -->
+    <ion-list *ngSwitchCase="'business'">
+      <ion-item-group *ngFor="let item of comContacts" #IonItemGroup>
+        <ion-item-divider color="bgColor" sticky index-key="item.belong" *ngIf="item.keyLetter">
+          <ion-label>{{item.groupName}}</ion-label>
+        </ion-item-divider>
+        <ion-item-sliding *ngFor="let i of item.contacts" #slidingItem>
+          <ion-item id="contact-list">
+            <ion-thumbnail item-start (click)="openBusinessPage(i.id)">
+              <img src="assets/imgs/contact_pic.png">
+            </ion-thumbnail>
+            <h2>{{i.customerName}} <ion-icon name="my-avatar" color="{{i.sex | sex}}" class="person"></ion-icon></h2>
+            <p>{{i.customerLevelName}} <span>{{i.customerStatus | customer}}</span></p>
+            <button ion-button color="callPhone" outline item-end (click)="showCall()">
+              <ion-icon name="call" color="callPhone"></ion-icon>  
+            </button>    
+          </ion-item>
+        </ion-item-sliding>        
+      </ion-item-group>
+    </ion-list>
+    <!-- 商务通讯录 -->
+  </div>
+
+  <div id="letter" #IndexedMenu>
+    <p class="indexed-item" [class.activate]="letter === index" *ngFor="let letter of indexes; let i = index" (click)="selectIndex(i)">{{letter}}</p>
+  </div>
+  <div class="modal"
+    [class.show]="showModal">
+    {{index}}
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event,contactodd)" threshold="200px" *ngIf='hideBtn'>
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

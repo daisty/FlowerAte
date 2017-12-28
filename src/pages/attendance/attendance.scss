@@ -1,0 +1,186 @@
+page-attendance {
+    #title-text{
+        &.title-md{
+            margin-left: 12rem;
+        }
+    }
+    #card{
+        background-color: #f4f4f4;
+        .calen{
+            width: 100%;
+            background-color: #fff;
+            .card{
+                
+                margin: 0;
+                &.list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child{
+                    box-shadow: 0 0 0 0;
+                }
+                .time-day{
+                    display: flex;
+                    // align-items: center;
+                    line-height: 30px;
+                    .label-ios + ion-input .text-input{
+                        margin-left: 6px;
+                        width: 100%;
+                        // width: calc(100% - (16px / 0) - 16px);
+                    }
+                    .cale{
+
+                        vertical-align: -3px;
+                    }
+                    .today{
+                        display: inline-block;
+                        margin: 0 5px;
+                        padding-top: -10px;
+                        line-height: 30px;
+                    }
+                    h3{
+                        display: inline-block;
+                        font-size: 18px;
+                        line-height: 30px;
+                    }
+                }
+                .item-block:last-child{
+                    border-bottom: 0;
+                }
+                .item-block:first-child{
+                    border-top: 0;
+                }
+            }
+        }
+
+        .record-list{
+            background-color: #F4F4F4;
+            .line-work{
+                padding-left: 25px;
+                .dash{
+                    height: 130px;
+                    width: 40px;
+                    margin-left: 20px;
+                    border-left: 1px dashed #aaaaaa;
+                }
+            }
+            ul >li{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                .no-card{
+                    height: 30px;
+                    width: 70px;
+                    margin-left: 10px;
+                }
+                .workTime{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    font-size: 18px;
+                    color: #666;
+                    text-align:justify; 
+                    text-justify:inter-word;
+                    span{
+                        display: inline-block;
+                        width: 4rem;
+                        line-height: 30px;
+                    }
+                }
+
+                .leg{
+                    width: 75%;
+                    height: auto;
+                    margin: 0 0 0 10px;
+                    background-color: #fff;
+                    .work-status{
+                        display: flex;
+                        align-items: center;
+                        
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                            top: 10px;
+                            bottom: 10px;
+                        }
+                        font-size: 14px;
+                        .work-time{
+                            display: inline-block;
+                            margin-right: 20px;  
+                        }
+                        .work-up{
+                            display: inline-block;
+                            width: 100px;
+                        }
+                        .statu{
+                            min-width: 50px;
+                            height: 30px;
+                            font-size: 14px;
+                        }
+                    }
+                    .btn-status{
+                        .statu{
+                            height: 30px;
+                            font-size: 14px;
+                        }
+                    }
+                    i{
+                        font-style: normal;
+                    }
+                    .work-address{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        padding-right: 10px;
+                        .earth{
+                            margin: 0 10px;
+                        }
+                        .detail-post{
+                            font-size: 14px;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+        .bg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 100px 0 0 ;
+            cursor: pointer;
+            img{
+                height: 10rem;
+            }
+            p{
+                color: #999;
+            }
+
+        }
+        .fixed-bottom{
+            position: fixed;
+            width: 90%;
+            left: 0;
+            right: 0;
+            bottom: 2%;
+            margin: 0 auto;
+            .address_pin{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                .earth{
+                    margin-right: 8px;
+                }
+                span{
+                    font-size: 1.4rem;
+                }
+            }
+            .btn-work{
+                width: 85%;
+                font-size: 16px;
+                margin: auto;
+            }
+        }
+
+    }
+
+}

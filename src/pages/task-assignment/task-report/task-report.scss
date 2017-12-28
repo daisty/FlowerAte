@@ -1,0 +1,45 @@
+page-task-report {
+    .toolbar-background-ios{
+        border-style:none !important;
+    }
+    #content {
+        .item-ios,.item-md{
+            padding: 0px;
+            .item-inner{
+                padding-left: 14px;
+                border-bottom: 0.2px solid #eeecf5;
+            }
+            &.noBBottom .item-inner {
+                border-bottom: none;
+                .label {
+                    margin:0px;
+                }
+            }
+        }
+        .list {
+            margin-bottom: 0px;
+        }
+        ion-item {
+            &.borrow-auditopinon {
+                border-bottom:0px;
+            }
+        }
+        .timeLay{
+            color: #333;
+            font-size: 1.8rem;
+        }
+        .expl {
+            width: 100%;
+            height: 7rem;
+            border: none;
+            padding: 1rem 0;
+        }
+        .input-right {
+        background: #fff;
+        .text-input {
+            text-align: right;
+        }
+        }
+        h3{font-size: 1.8rem}
+    }
+}

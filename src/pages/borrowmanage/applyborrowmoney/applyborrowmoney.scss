@@ -1,0 +1,76 @@
+page-applyborrowmoney {
+    .toolbar-background-ios{
+        border-style:none !important;
+    }
+    .title-md{
+        padding-top:0.5rem;
+        margin-left: 7rem;
+    }
+    #content {
+        position: relative;
+        background-color: #f4f4f4;
+        .news-color {
+            color: #677077;
+        }
+        .item-ios,.item-md{
+            padding: 0px;
+            .item-inner{
+                padding-left: 14px;
+                border-bottom: 0.2px solid #eeecf5;
+                ion-icon {
+                    padding-top: 5px;
+                }
+            }
+            &:first-child{
+                border: none;
+            }
+            &:last-child {
+                border: none;
+            }
+            &.noBBottom .item-inner {
+                border-bottom: none;
+            }
+            ion-input {
+                margin: 8px 0px;
+            }
+        }
+        .label-md {
+            color:#000;
+        }
+        .money .input-wrapper:after{
+            content:'元'
+        }
+        .selFont {
+            color: #c5c5c5;
+        }
+        .text-input {
+            text-align: right;
+            margin-left: 10px;
+        }
+        .expl .text-input {
+            text-align: left;
+        }
+        .upload {
+            display: flex;
+            flex-wrap:wrap;
+            .image {
+                position: relative;
+                margin: 0.5rem;
+                flex: 0 0 29%;
+                .img {
+                    width:100%;
+                }
+                i  {
+                    width: 1rem;
+                    position:absolute;
+                    top: -0.75rem;
+                    right: -0.6rem;
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}
+// percentage()

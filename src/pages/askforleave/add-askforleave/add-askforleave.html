@@ -1,0 +1,210 @@
+<ion-header>
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title>请假</ion-title>
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+    <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="submit()">
+        提交
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div id="select">
+    <ion-list>
+      <ion-item class="type">
+        <ion-label>请假类型</ion-label>
+        <ion-select interface="action-sheet" okText="确认" cancelText="取消" [(ngModel)]="paramObj.vacateType">
+          <ion-option *ngFor="let item of items" value="{{item.msg}}">{{item.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="part">
+        <ion-label>实际开始日期</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" min="2017-01-01" max="2019-12-31" yearValues="2017,2018,2019" cancelText="取消" doneText="确定" [(ngModel)]="paramObj.startDate" (ngModelChange)="change()"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>实际开始时间</ion-label>
+        <ion-select okText="确认" cancelText="取消" [(ngModel)]="paramObj.startTime" (ngModelChange)="change()">
+          <ion-option value="A">08 : 30</ion-option>
+          <ion-option value="B">09 : 00</ion-option>
+          <ion-option value="C">09 : 30</ion-option>
+          <ion-option value="D">10 : 00</ion-option>
+          <ion-option value="E">10 : 30</ion-option>
+          <ion-option value="F">11 : 00</ion-option>
+          <ion-option value="G">11 : 30</ion-option>
+          <ion-option value="H">13 : 30</ion-option>
+          <ion-option value="I">14 : 00</ion-option>
+          <ion-option value="J">14 : 30</ion-option>
+          <ion-option value="K">15 : 00</ion-option>
+          <ion-option value="L">15 : 30</ion-option>
+          <ion-option value="M">16 : 00</ion-option>
+          <ion-option value="N">16 : 30</ion-option>
+          <ion-option value="O">17 : 00</ion-option>
+          <ion-option value="P">17 : 30</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="border-tb part">
+        <ion-label>实际结束日期</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" min="2017-01-01" max="2019-12-31" yearValues="2017,2018,2019"  cancelText="取消" doneText="确定" [(ngModel)]="paramObj.endDate" (ngModelChange)="change()"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>实际结束时间</ion-label>
+        <ion-select okText="确认" cancelText="取消" [(ngModel)]="paramObj.endTime" (ngModelChange)="change()">
+          <ion-option value="A">09 : 00</ion-option>
+          <ion-option value="B">09 : 30</ion-option>
+          <ion-option value="C">10 : 00</ion-option>
+          <ion-option value="D">10 : 30</ion-option>
+          <ion-option value="E">11 : 00</ion-option>
+          <ion-option value="F">11 : 30</ion-option>
+          <ion-option value="G">12 : 00</ion-option>
+          <ion-option value="H">14 : 00</ion-option>
+          <ion-option value="I">14 : 30</ion-option>
+          <ion-option value="J">15 : 00</ion-option>
+          <ion-option value="K">15 : 30</ion-option>
+          <ion-option value="L">16 : 00</ion-option>
+          <ion-option value="M">16 : 30</ion-option>
+          <ion-option value="N">17 : 00</ion-option>
+          <ion-option value="O">17 : 30</ion-option>
+          <ion-option value="P">18 : 00</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>时长（天）</ion-label>
+        <ion-input type="number" placeholder="总共时长" class="input-right" readonly [(ngModel)]="howLong"></ion-input>
+      </ion-item>
+
+      <my-radio buttonColor='#limegreen' title='所在地区' option1='手填' option2='选择' [(radio)]='data.area'>
+      </my-radio>
+
+      <ion-item *ngIf="data.area==false">
+        <ion-label>所在地区</ion-label>
+        <ion-select okText="确认" cancelText="取消" [(ngModel)]="paramObj.area">
+          <ion-option *ngFor="let item of areaList">{{item.area}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="data.area==true">
+        <ion-label>所在地区</ion-label>
+        <ion-input type="text" placeholder="请输入所在地区" class="input-right" [(ngModel)]="paramObj.area"></ion-input>
+      </ion-item>
+
+      <my-radio buttonColor='#limegreen' title='所在部门' option1='手填' option2='选择' [(radio)]='data.department'>
+      </my-radio>
+
+      <ion-item *ngIf="data.department==false">
+        <ion-label>所在部门</ion-label>
+        <ion-select okText="确认" cancelText="取消" [(ngModel)]="paramObj.depart">
+          <ion-option *ngFor="let item of departmentList">{{item.department}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="data.department==true">
+        <ion-label>所在部门</ion-label>
+        <ion-input type="text" placeholder="请输入所在部门" class="input-right" [(ngModel)]="paramObj.depart"></ion-input>
+      </ion-item>
+
+      <my-radio buttonColor='#limegreen' title='所在岗位' option1='手填' option2='选择' [(radio)]='data.post'>
+      </my-radio>
+      
+      <ion-item *ngIf="data.post==false">
+        <ion-label>所在岗位</ion-label>
+        <ion-select okText="确认" cancelText="取消" [(ngModel)]="paramObj.position">
+          <ion-option *ngFor="let item of postList">{{item}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="data.post==true">
+        <ion-label>所在岗位</ion-label>
+        <ion-input type="text" placeholder="请输入所在岗位" class="input-right"  [(ngModel)]="paramObj.position"></ion-input>
+      </ion-item>
+
+      <ion-item class="part">
+        <ion-label>请假事由</ion-label>
+      </ion-item>
+
+      <ion-item class="reason">
+        <ion-textarea name="description" class="description" placeholder="例如:家里有事" [(ngModel)]="paramObj.reason"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="part">
+        附件（病假需要上传医生证明，可补传 ）
+      </ion-item>
+      
+      <ion-item>
+        <div class="upload accessory">
+          <span class="image" (click)="addImage()">
+            <img class="img" src="assets/imgs/addImage.png">
+          </span>
+          <span class="image" *ngFor="let item of Iamges;let i = index;">
+            <img class="img" src="{{item.url}}" (click)="showBig(item.url)">
+            <i (click)="delImage(i)">
+              <img src="assets/imgs/close.png">
+            </i>
+          </span>
+        </div>
+      </ion-item>
+
+      <ion-item class="hide">
+        <ion-label>主送人</ion-label>
+        <ion-select okText="确认" cancelText="取消" #select multiple="true" [(ngModel)]="paramObj.mains">
+          <ion-option *ngFor="let item of sendtoSb">{{item}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="part sendWho">
+        主送人
+      </ion-item>
+      <ion-item>
+        <div class="upload sendTo">
+          <span class="image" (click)="sendtoWho()">
+            <img class="img" src="assets/imgs/addImage.png">
+            <p>名称</p>
+          </span>
+          <span class="image" *ngFor="let aa of paramObj.mains;let i=index;">
+            <img class="img" src="assets/imgs/userImage2.png">
+            <p>{{aa}}</p>
+            <i (click)="delSb(i)">
+              <img src="assets/imgs/close.png">
+            </i>
+          </span>
+        </div>
+      </ion-item>
+
+      <ion-item class="hide">
+        <ion-label>抄送人</ion-label>
+        <ion-select okText="确认" cancelText="取消" #select2 multiple="true" [(ngModel)]="paramObj.carbons">
+          <ion-option *ngFor="let item of sendtoSone">{{item}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="part sendWho">
+        抄送人
+      </ion-item>
+      <ion-item>
+        <div class="upload sendTo">
+          <span class="image" (click)="sendtoCarbons()">
+            <img class="img" src="assets/imgs/addImage.png">
+            <p>名称</p>
+          </span>
+          <span class="image" *ngFor="let aa of paramObj.carbons;let i=index;">
+            <img class="img" src="assets/imgs/userImage1.png">
+            <p>{{aa}}</p>
+            <i (click)="delSone(i)">
+              <img src="assets/imgs/close.png">
+            </i>
+          </span>
+        </div>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

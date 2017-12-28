@@ -1,0 +1,119 @@
+page-task-assignment {
+    a{
+        text-decoration: none;
+        color: #999;
+    }
+    #taskTration{
+        &.title-md{
+            margin-left: 12rem;
+        }
+ 
+    }
+    .segment-md .segment-button, .segment-ios .segment-button{
+        color: #999999;
+        font-size: 1.4rem;
+    }
+
+    .toolbar-background-ios, .toolbar-background-md{
+        background: #fff;
+    }
+    .segment-md .segment-button.segment-activated{
+        border-color: #38c0ff;
+        color: #38c0ff;
+    }
+    .segment-ios .segment-button.segment-activated{
+        color: #38c0ff;
+        border-color: #38c0ff;
+        background-color: #fff;
+    }
+    .segment-md .segment-button,{
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: #fff;
+    }
+    .segment-ios .segment-button{
+        border: {
+            top-width: 0;
+            left-width: 0;
+            right-width: 0;
+            bottom-width: 2px;
+            bottom-style: solid;
+            bottom-color: #fff;
+        }
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        border-width: 0;
+    }
+    .toolbar-ios .segment-button{
+        height: 3rem;
+        line-height: 2.9rem;
+        font-size: 1.4rem;
+        max-width: none;
+    }
+    .toolbar-ios-white .segment-ios .segment-button.segment-activated{
+        color: #38c0ff;
+    }
+    .header-md::after{
+        // background-image: none;
+    }
+    #incident{
+        position: relative;
+        background-color: #f4f4f4;
+        .incident-page{
+            margin-top: 5px;
+            .avatar{
+                border-radius: 50%;
+            }
+            h2{
+                span{
+                    color: #999;
+                    font-size: 1.3rem;
+                    padding-left: 5px;
+                }
+            }
+            .task-time{
+                color: #999;
+                font-size: 1.4rem;
+                line-height: 1.5;
+            }
+            .statuss{
+                color: #222;
+            }
+            .leave{
+                border-bottom:1px solid #f5f5f5; 
+                .task-text{
+                    font-size: 1.6rem;
+                    color: #333 !important;
+                    
+                }
+                .task-files{
+                    margin-top: 10px;
+                }
+            }
+            .cale{
+                vertical-align: -3px;
+                margin-right: 5px;
+            }
+            .time-add{
+                margin-bottom: 10px;
+                font-size: 1.6rem;
+                .note-md, .note-ios{
+                    color: #999;
+                }
+                
+            }
+        }
+        .list-ios, .list-md{
+            margin-bottom: 10px;
+        }
+        .list-ios > .item-block:first-child, .list-md > .item-block:first-child{
+            border-top: 0 none;
+        }
+        .list-ios > .item-block:last-child, .list-md > .item-block:last-child{
+            border-bottom: 0 none;
+        }
+        .list-md .item-block .item-inner, .list-ios .item-block .item-inner{
+            border-bottom: 0;
+        }
+    }
+}

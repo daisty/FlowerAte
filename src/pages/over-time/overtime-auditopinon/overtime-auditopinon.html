@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar  color="headerBg" no-border-bottom>
+    <ion-title class="toCenter">审核意见</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="submit" (click)="confirm()">
+        确认
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="content">
+  <ion-list>
+      <my-radio 
+        buttonColor='#limegreen' [(radio)]='paramObj.auditStatus' *ngIf="!page">
+        </my-radio>
+      <ion-item class="marginTop-10" *ngIf="!page">
+        审核原因<br><textarea [(ngModel)]="paramObj.auditAdvice" placeholder="请输入原因" class="expl"></textarea>
+      </ion-item>
+      <div class="bg" *ngIf="page">
+        <img src="assets/imgs/voiceBg.jpg" alt="">
+      </div>
+      <p class="tip" *ngIf="page">
+        {{ text }}
+      </p>
+      <div class="voice" *ngIf="page" (click)="startListening()">
+        <div class="mi">
+          <ion-icon name="my-autocheck" color='white'></ion-icon>
+        </div>
+      </div>
+      
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,70 @@
+
+<ion-header >
+
+  <ion-navbar color="headerBg" no-border-bottom>
+    <ion-title>加班</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="submit()">
+        提交
+      </button>
+   </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="content">
+  <ion-list>
+    <ion-item class="marginBot-10"> 
+        <ion-label>加班类型</ion-label>
+        <ion-select [(ngModel)]="paramObj.overType" okText="确认" cancelText="取消">
+          <ion-option >普通加班</ion-option>
+          <ion-option >节假日加班</ion-option>
+          <ion-option >其他...</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>地区</ion-label>
+        <ion-select [(ngModel)]="paramObj.area" okText="确认" cancelText="取消">
+         <ion-option *ngFor="let item of areas">{{ item.area }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>加班人员</ion-label>
+        <ion-select [(ngModel)]="paramObj.overWorker" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of peoples">{{ item }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>加班开始时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.overStartTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>加班结束时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD HH:mm" cancelText="取消" doneText="确认" max="2020-10-31" bindon-ngModel="paramObj.overEndTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>加班时长 </ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.overLong" placeholder="请输入时长"></ion-input>
+    </ion-item>
+    <ion-item class="marginBot-10">
+      <ion-label>可休时长</ion-label>
+      <ion-input type="number" item-right [(ngModel)]="paramObj.relaxDay" placeholder="请输入时长"></ion-input>
+    </ion-item>
+    <my-radio 
+        buttonColor='#limegreen' [(radio)]='paramObj.noonBreakOr' title="是否午休" option1="是" option2="否">
+        </my-radio>
+    <ion-item class="marginBot-10">
+        <ion-label>审核人员</ion-label>
+        <ion-select [(ngModel)]="paramObj.charger" okText="确认" cancelText="取消">
+          <ion-option *ngFor="let item of peoples">{{ item }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item class="noBBottom">
+      工作内容
+    </ion-item>
+    <ion-item>
+      <textarea placeholder="例如：..." [(ngModel)]="paramObj.workContent" class="expl"></textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

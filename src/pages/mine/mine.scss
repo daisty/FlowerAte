@@ -1,0 +1,73 @@
+
+page-mine {
+    #mine {
+        .scroll-content {
+            margin-top:44px;
+        }
+        .mine1 {
+            margin-bottom: 0px;
+        }
+    }
+    .mine-img{
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .mine-iden{
+        i{
+            background: #38c0ff;
+            font-size: 8px;
+            font-style: normal;
+            padding: 3px 5px;
+            margin-left: 8px;
+            color: #fff;
+            border-radius: 3px;
+        }
+        margin-bottom:10px; 
+    }
+    #event{
+        margin-bottom: 0px;
+        border-top:2px solid #eee;
+        border-bottom:8px solid #eee;
+        ion-grid{
+            ion-row{
+                ion-col{
+                    text-align: center;
+                    h2{
+                        border-right:1px solid #eee; 
+                    }
+                    p{
+                        margin-top:-10px;
+                        border-right:1px solid #eee; 
+                    }
+                }
+                .mine-last{
+                    h2{
+                        border-right:0px solid #eee; 
+                    }
+                    p{
+                        margin-top:-10px;
+                        border-right:0px solid #eee; 
+                    }
+                }
+            }
+        }
+    }
+    #mine-main{
+        .mine-bot{
+            border-bottom:6px solid #eee;
+            border-top: 0;
+        }
+        ion-item{
+            .item-inner{
+                border-bottom:0px solid #eee;
+            }
+            border-bottom:2px solid #eee;
+            span{
+                margin-top: -2px;
+            }
+            .mine-span{
+                color:#bdbdbd;
+            }
+        }
+    }
+}

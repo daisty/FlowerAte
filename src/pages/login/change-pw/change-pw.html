@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar text-center color="headerBg">
+    <ion-title>重置密码</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="changPw">
+  <ion-list>
+    <div>
+      <ion-item>
+        <ion-label stacked>新密码</ion-label>
+        <ion-input type="number" placeholder='请输入密码' [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label stacked>确认密码</ion-label>
+      <ion-input type="number" placeholder="请再次输入密码" [(ngModel)]="repassword"></ion-input>
+    </ion-item>
+    <p class="tip" *ngIf="showmsg"><i> *</i> {{msg}}</p>
+    <ion-item class="btn">
+      <button ion-button full large color="{{password && repassword?'loginBtn':'thinGrey'}}" (click)="comfirm(password,repassword)">
+        确认
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

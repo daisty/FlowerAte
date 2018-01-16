@@ -1,0 +1,45 @@
+
+page-detailPage {
+    background: #F4F4F4;
+    .title-md{
+        margin-left: 7rem;
+    }
+    
+    #detail{
+        background: #F4F4F4;
+        // button{
+        //     width: 10rem;
+        //     margin-top: 2rem;
+        // }
+    }
+    #mine-main{
+        
+        
+        .mine-bot{
+            height: 10rem;
+            border-top: 0;
+            line-height: 10rem;
+            border-bottom: 2rem solid #F4F4F4;
+        }
+        ion-item{
+            width: 100%;
+            background: #fff;
+            padding-left: 0;
+            .left{
+                position: absolute;
+                left: 2rem;
+                color: #333;
+            }
+            .right{
+                float: right;
+                color: #cdcdcd;
+            }
+            .mine-span{
+                color:#bdbdbd;
+            }
+        }
+    }
+    .exitbtn{
+        width: 26rem;        
+    }
+}

@@ -1,0 +1,57 @@
+
+  <ion-header>
+    <ion-navbar color="headerBg" >
+        <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+      <ion-title>我的详情</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content id="detail">
+  
+    
+      <ion-list id="mine-main">
+        <ion-item class="mine-bot no-bottom-border" >
+            <span item-start class="left">头像</span>
+            
+                <ion-thumbnail item-end class="mine-img" >
+                    <img src="assets/imgs/avatar.png">
+                  </ion-thumbnail>
+                   
+        </ion-item>
+        <ion-item >
+            <span class="left" >姓名</span>
+            <span class="right">王小文</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">性别</span>
+
+            <span class="right">女</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">公司名称</span>
+            <span class="right">阿里妈妈</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">项目组</span>
+            <span class="right">一线实施体系</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">职位</span>
+            <span class="right">产品专员</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">员工编号</span>
+            <span class="right">IKE102834</span>
+        </ion-item>
+        <ion-item >
+            <span class="left">企业号码</span>
+            <span class="right">QY102834</span>
+        </ion-item>
+        
+      </ion-list>
+      <!-- <button ion-button color="danger" round class="exitbtn" full>退出当前账号</button> -->
+      
+      <!-- <ion-item class="no-bottom-border" style="padding-left: 16px"> -->
+          <button ion-button full round color="danger"  large (click)="logout()">退出当前账号</button>
+      <!-- </ion-item> -->
+  </ion-content>
+  

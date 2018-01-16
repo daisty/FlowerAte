@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color="headerBg" no-border-bottom>
+    <ion-title class="toCenter">加班详情</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="content">
+    <ion-list>
+      <div class="big-item" >
+        <ion-item style="padding-left:16px">
+          <ion-thumbnail item-start>
+            <img src="{{ imageUrl + data.overWorker + '?token=' + token }}" alt="加载中...">
+          </ion-thumbnail>
+          <h3 class="name">{{ data.overWorker }} <span style="margin-left: 10px;color:#999">{{ data.depart }}</span></h3>
+          <p>{{ data.createTime }}</p>
+          <div class="time-date" item-right>
+              <button ion-button color="{{data.auditStatus | color }}" round>{{data.auditStatus | status}}</button>
+          </div>
+        </ion-item>
+        <div class="item-1"> 
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>开始时间</span>
+            <span>{{ data.overStartTime }}</span>
+          </div>
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>结束时间：</span>
+            <span>{{ data.overEndTime }}</span>
+          </div>
+        </div>
+      </div>
+      <ion-item  class="no-bottom-border">
+        <p class="detail1">
+          <span>项目组：</span><span>{{ data.depart }}</span>
+        </p>
+        <p class="detail1">
+          <span>职 位：</span><span>{{ data.position }}</span>
+        </p>
+        <p class="detail1">
+          <span>加班类型：</span><span>{{ data.overType }}</span>
+        </p>
+        <p class="detail1">
+          <span>加班时长：</span><span>{{ data.overLong }}</span>
+        </p>
+        <p class="detail1">
+          <span>任务下发人：</span><span>{{ data.tasker }}</span>
+        </p>
+        <p class="detail1">
+          <span>是否午休：</span><span>{{ data.noonBreakOr?'是':'否'  }}</span>
+        </p>
+        <p class="detail1">
+          <span>工作内容：</span><span>{{ data.workContent }}</span>
+        </p>
+      </ion-item>
+      <ion-item  class="no-bottom-border mg5" *ngIf="!data.hasAuditIs">
+        <div class="detail1">
+          <span>2017-08-15</span>
+          <p class="reason">审核通过原因：{{ data.auditStatus | status}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <div class="btnPar" *ngIf="data.hasAuditIs">
+      <button ion-button icon-only color="white" class="pay"  (click)="buttonFn(data.id)">
+        <ion-icon name="my-check" md="md-my-check" color="blue"></ion-icon>手动审核
+      </button>
+      <button ion-button icon-only color="white" class="pay borderLeft" (click)="buttonFn(data.id,1)">
+        <ion-icon name="my-autocheck" md="md-my-autocheck" color="green"></ion-icon>语音审核
+      </button>
+   </div>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header id="otHeader">
+
+  <ion-navbar color="footerNav" no-border-bottom>
+    <ion-title class="headTitle">加班</ion-title>
+    <my-back text="首页"  *ngIf="tab"  (click)="closeModal()"></my-back>
+    <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="submit()">
+        加班录入
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <div class="xscorll">
+      <ul>
+        <li *ngFor="let t of titleArr;let i = index"  [ngClass]="{'active':i == titleIndex,'leftB':i != 0}" (click)="change(t.type,i)">{{ t.title }}</li>
+      </ul>
+  </div>
+
+</ion-header>
+
+<ion-content  id="ot">
+    <!--全部 -->
+    <ion-list >
+      <div class="big-item"  *ngFor="let statu of statusList" (click)="toPage(statu.id)" >
+        <ion-item>
+          <ion-thumbnail item-start (click)="gg()">
+            <!--<img src="assets/imgs/avatar2.png" alt="">-->
+            <img src="{{ imageUrl + statu.overWorker + '?token=' + token }}" alt="加载超时">
+          </ion-thumbnail>
+          <h3 class="name">{{ statu.overWorker }} <span style="margin-left: 10px;color:#999">{{ statu.depart }}</span></h3>
+          <p>{{ statu.overWorker }}</p>
+          <div class="time-date" item-right>
+              <button ion-button color="{{statu.auditStatus | color }}" round>{{statu.auditStatus | status}}</button>
+          </div>
+        </ion-item>
+        <div class="item-1">
+          <span class="vacation">
+            <ion-icon ios="ios-my-qingjia" md="md-my-qingjia" color="secondary" clear></ion-icon>
+            加班类型：</span>
+          <span class="el">{{ statu.overType }}</span>
+        </div>
+        <div class="item-1"> 
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>开始时间：</span>
+            <span>{{ statu.overStartTime }}</span>
+          </div>
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>结束时间：</span>
+            <span>{{ statu.overEndTime }}</span>
+          </div>
+        </div>
+      </div>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="200px" *ngIf='hideBtn'>
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="加载中..."
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

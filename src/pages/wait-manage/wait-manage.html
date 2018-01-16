@@ -1,0 +1,73 @@
+<ion-header id="wait-header">
+  <ion-navbar text-center color="headerBg">
+    <ion-title>代办事件</ion-title>
+  </ion-navbar>
+  <div class="xscorll">
+      <ul  #myd>
+        <li *ngFor="let t of titleArr;let i = index"  [ngClass]="{'active':i == titileIndex}" (click)="selectTitle(i,t.type)">{{ t.title }}</li>
+        <!--留空位置-->
+        <li style="flex:0 0 50px"></li> 
+        <li class="arrow-down" [ngClass]="{'active':isBool}" (click)="isBool = !isBool">
+          <!--<ion-icon ios="ios-arrow-down" md="md-arrow-down" color="secondary" clear></ion-icon>-->
+          <div></div>
+        </li>
+      </ul>
+-  </div>
+</ion-header>
+
+<ion-content  id="waitManage">
+  <div class="arrow-body" *ngIf="isBool">
+    <div class="arrow-child">
+      <span (click)="change('CHECK','核对')">核对</span><span (click)="change('MAKE','制作')">制作</span>
+    </div>
+    <div class="arrow-child">
+      <span (click)="change('SEENODEAL','待处理')">待处理</span>
+      <span (click)="change('NOSEENODEAL','未查看未处理')">未查看未处理</span>
+      <span (click)="change('NODEAL','逾期未处理')">逾期未处理</span>
+      <span (click)="change('HAVEDEAL','已处理')">已处理</span>
+    </div>
+    <div class="arrow-child">
+      <span>预测</span>
+    </div>
+  </div>
+    <!--全部 -->
+    <ion-list >
+      <div class="big-item"  *ngFor="let statu of statusList" (click)="toPage(statu)" >
+        <ion-item>
+          <ion-thumbnail item-start (click)="gg()">
+            <!--<img src="assets/imgs/avatar2.png" alt="">-->
+            <img src="{{ imageUrl + statu.headPortrait}}" alt="加载中...">
+          </ion-thumbnail>
+          <h3 class="name">{{ statu.userName }} <span style="margin-left: 10px;color:#999">{{ statu.deparment || '未知' }}</span></h3>
+          <p>{{ statu.getTime.split('T')[0] || '' }}</p>
+          <div class="time-date" item-right>
+              <span>{{ statu.fatherBO.functionChineseName + '-'+ statu.status }}</span>
+          </div>
+        </ion-item>
+        <div class="item-1">
+          <span class="vacation">
+            <!--<ion-icon ios="ios-my-qingjia" md="md-my-qingjia" color="secondary" clear></ion-icon>-->
+            {{ statu.contents[0].split(':')[0]}}：</span>
+          <span class="el">{{ statu.contents[0].split(':')[1]}}</span><br>
+          <span *ngIf="statu.type == 'reimbursement' || statu.type == 'applyLend'">
+            <span class="vacation" >
+              {{ statu.contents[1].split(':')[0]}}：</span>
+            <span class="el">{{ statu.contents[1].split(':')[1]}}</span>
+          </span>
+        </div>
+        <div class="item-1" *ngIf="statu.type == 'vacate' || statu.type == 'overWork'"> 
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>{{ statu.contents[1].split(':')[0]}}：</span>
+            <span>{{ statu.contents[1].split(':')[1]}}</span>
+          </div>
+          <div class="vacation">
+            <ion-icon ios="ios-my-time" md="md-my-time" color="secondary" clear></ion-icon>
+            <span>{{ statu.contents[2].split(':')[0]}}：</span>
+            <span>{{ statu.contents[2].split(':')[1]}}</span>
+          </div>
+        </div>
+      </div>
+      
+    </ion-list>
+</ion-content>

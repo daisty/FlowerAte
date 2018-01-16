@@ -1,0 +1,63 @@
+
+page-search {
+    .title-md{
+        margin-left: 7rem;
+    }
+    #add-background{
+        background: #eee;
+        .SSP{
+            margin: 6px 0;
+            margin-left: 16px;
+            color: #999;
+        }
+    }
+    #newPeople{
+        .toolbar-content{
+            display: flex;
+            align-items:center;
+            justify-content:center;
+        }
+        
+        #search{
+            width: 310px;
+            margin-left: 20px;
+            .searchbar-input{
+                border-radius: 60px;
+            }
+        }
+    }
+    #people{
+        .team-commun{
+            img{
+                border-radius: 50%;
+            }
+            border-bottom: 1px solid #eee;
+            span{
+                font-size: 1.4rem;
+                color: #ccc;
+            }
+            .team-posit{
+                margin-left: 20px;
+            }
+            .item-inner{
+                border: 0 !important;
+            }
+            .add{
+                padding: 6px 8px;
+                background: rgb(39, 165, 49);
+                color: #fff;
+                ion-icon{
+                    margin-right: 10px;
+                    color: #fff;
+                }
+            }
+            h2{
+                i{
+                    margin-left: 16px;
+                    background: #5395f1;
+                }
+            }
+        }
+    }
+    
+}

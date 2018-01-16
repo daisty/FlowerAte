@@ -1,0 +1,45 @@
+
+<ion-header>
+  <ion-navbar text-center color="headerBg">
+    <ion-title>完善资料</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="changPw">
+  <ion-list>
+    <div *ngIf="!status">
+      <ion-item>
+        <ion-label stacked>姓名</ion-label>
+        <ion-input type="text" placeholder='请输入您的真实姓名' [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </div>
+    <div *ngIf="status">
+      <ion-item>
+        <ion-label stacked>企业名称</ion-label>
+        <ion-input type="text" placeholder='请输入企业名称' [(ngModel)]="enterpriseName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>企业人姓名</ion-label>
+        <ion-input type="text" placeholder='请输入您的真实姓名' [(ngModel)]="name"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item *ngIf="status">
+      <ion-label stacked>个人编号</ion-label>
+      <ion-input type="text" placeholder="请输入员工编号5位字母  例如: IKEID" [(ngModel)]="num"></ion-input>
+    </ion-item>
+    
+    <ion-item *ngIf="status">
+      <ion-input type="text" placeholder="将为您生成员工编号" [(ngModel)]="empl"></ion-input>
+      <button ion-button large color="orange" item-end style="height: 3.5rem" (click)="btn(num)">
+        生成
+      </button>
+    </ion-item>
+    <p class="tip" *ngIf="showmsg"><i> *</i> {{msg}}</p>
+    <ion-item class="btn">
+      <button ion-button full large color="loginBtn" (click)="comfirm(name,empl,enterpriseName)">
+        确认
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

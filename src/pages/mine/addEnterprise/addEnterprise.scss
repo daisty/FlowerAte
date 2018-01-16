@@ -1,0 +1,50 @@
+
+page-addEnterprise {
+    .title-md{
+        margin-left: 7rem;
+    }
+    .mine-img{
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .mine-iden{
+        i{
+            background: #38c0ff;
+            font-size: 8px;
+            font-style: normal;
+            padding: 3px 5px;
+            margin-left: 8px;
+            color: #fff;
+            border-radius: 3px;
+        }
+        margin-bottom:10px; 
+    }
+    #addEn-company{
+        background: #eee;
+        ion-item{
+            border: 0px;
+            background: #eee;
+            ion-label{
+                font-size: 16px;
+            }
+            ion-input{
+                background: #fff;
+                font-size: 14px;
+                padding-left: 16px;
+                border-radius: 3px;
+            }
+            &.comfirm {
+                border: 0px;
+                background: #eee;
+                button{
+                    border-radius: 6px;
+                    height: 3rem;
+                    background: #38c0ff;
+                }
+            }
+        }
+        .item-inner{
+            border: 0;
+        }
+    }
+}

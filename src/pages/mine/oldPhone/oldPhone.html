@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar  color="headerBg">
+      <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+    <ion-title text-center>修改手机号码</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="oldPhone">
+  <ion-list>
+    <div>
+      <ion-item>
+        <ion-label stacked>原手机号码</ion-label>
+        <ion-input type="number" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+      <span class="code" (click)="sendCode()" *ngIf="!getCode">获取验证码</span>
+      <span class="code" *ngIf="getCode">{{second}}s后重新获取</span>
+      <p class="tip" *ngIf="hasSend"><i> * </i>短信已发送，请输入收到的短信验证码 </p>
+      <p class="tip" *ngIf="err"><i> * </i>您的号码输入有误,请检查</p>
+    </div>
+    <ion-item>
+      <ion-label stacked>短信验证码</ion-label>
+      <ion-input type="number" [(ngModel)]="code"></ion-input>
+    </ion-item>
+    <p class="tip" *ngIf="codeerr"><i> * </i>{{msg}} </p>
+    <ion-item class="btn">
+      <button ion-button full large color="loginBtn" (click)="next(phone,code)">
+        下一步
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

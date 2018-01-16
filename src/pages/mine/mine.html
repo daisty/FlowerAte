@@ -1,0 +1,62 @@
+
+  <ion-header>
+    <ion-navbar text-center color="headerBg">
+      <ion-title>我的</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content id="mine">
+      <ion-list class="mine1">
+        <ion-item class="no-bottom-border" (click)="detail()">
+          <ion-thumbnail item-start class="mine-img">
+            <img src="{{images+name}}" alt="">
+          </ion-thumbnail>
+          <h2 class="mine-iden">{{ name }}<i>{{ team }}</i></h2>
+          <p>{{ company }}</p>
+          <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+        </ion-item>
+      </ion-list>
+      <ion-list id="event">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+              <h2>{{ todo }}</h2>
+              <p>待办事件</p>
+            </ion-col>
+            <ion-col col-4>
+              <h2>{{ leave }}</h2>
+              <p>请假</p>
+            </ion-col>
+            <ion-col col-4 class="mine-last">
+              <h2>{{ reimburse }}</h2>
+              <p>报销</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+      <ion-list id="mine-main">
+        <ion-item class="mine-bot mine-team" (click)="addEnterprise()">
+            <span class="mine-teamSpan">{{ teams }}</span>
+            <span item-end class="mine-span">{{ new }}</span>
+            <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+        </ion-item>
+        <ion-item (click)="editPhone()">
+            <span #abc>修改手机号码</span>
+            <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+        </ion-item>
+        <ion-item class="mine-bot" (click)="editPhoneD()">
+            <span>修改登录密码</span>
+            <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+        </ion-item>
+        <ion-item class="mine-bot" >
+            <span>声纹设置</span>
+            <span item-end class="mine-span">未设置</span>
+            <ion-icon name="my-arrow-right" md="md-my-arrow-right" color="grey" clear item-right></ion-icon>
+        </ion-item>
+        <ion-item >
+            <span>当前版本</span>
+            <span item-end class="mine-span">v2.1</span>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+  

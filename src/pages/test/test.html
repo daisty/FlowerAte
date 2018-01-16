@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="headerBg" no-border-bottom>
+    <ion-title id="title-pointer" (click)="show = !show" [ngClass]="{'backActive':tab}">
+        {{seleFont || '全部'}}<ion-icon name="arrow-down" class="down-center"></ion-icon>
+    </ion-title>
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+   <ion-buttons end>
+      <button ion-button icon-only class="apply" (click)="toPage()">
+        申请借款
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content id="borrowManage-c">
+  <div id="under-model" *ngIf="show"></div>
+  <div id="select-all" *ngIf="show">
+    <ion-list>
+      <ion-item *ngFor="let item of items;let i = index"  [ngClass]="{'active-child':item.value == seleFont}" (click)="selectFilter()">{{item.value}}</ion-item>
+    </ion-list>
+  </div>
+  <div id="status-list">
+    <ion-list #abc>
+      <ion-item *ngFor="let statu of statusList" (click)="set()">
+          {{ statu.test }}
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px" *ngIf="hideBtn">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中..."
+     >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

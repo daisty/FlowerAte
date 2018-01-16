@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="headerBg">
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+    <ion-title>我的</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="addEn-company">
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>企业名称</ion-label>
+      <ion-input type="text" placeholder="请输入企业名称"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>企业人姓名</ion-label>
+      <ion-input type="text" placeholder="请输入您的真实姓名"></ion-input>
+    </ion-item>
+    <ion-item class="comfirm">
+        <button ion-button full (click)="closeModal()">确定</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

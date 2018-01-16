@@ -1,0 +1,597 @@
+<ion-header>
+  <ion-navbar text-center color="headerBg" id="myTeam">
+    <my-back text="首页" *ngIf="tab" (click)="closeModal()"></my-back>
+    <ion-title>我的团队</ion-title>
+    <span item-end class="mine-span" color="grey" (click)="addPeople()">添加新人</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list id="people">
+    <div class="anchor">
+      <a href="#A">A</a>
+      <a href="#B">B</a>
+      <a href="#C">C</a>
+      <a href="#D">D</a>
+      <a href="#E">E</a>
+      <a href="#F">F</a>
+      <a href="#G">G</a>
+      <a href="#H">H</a>
+      <a href="#I">I</a>
+      <a href="#J">J</a>
+      <a href="#K">K</a>
+      <a href="#L">L</a>
+      <a href="#M">M</a>
+      <a href="#N">N</a>
+      <a href="#O">O</a>
+      <a href="#P">P</a>
+      <a href="#Q">Q</a>
+      <a href="#R">R</a>
+      <a href="#S">S</a>
+      <a href="#T">T</a>
+      <a href="#U">U</a>
+      <a href="#V">V</a>
+      <a href="#W">W</a>
+      <a href="#S">S</a>
+      <a href="#Y">Y</a>
+      <a href="#Z">Z</a>
+    </div>
+    <ion-item class="team-commun" style="border:0">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{(b==5)?'assets/imgs/avatar2.png':'assets/imgs/avatar.png'}}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+      <span item-end>我</span>
+      <!-- <button ion-button clear>View</button> -->
+    </ion-item>
+  </ion-list>
+  <ion-item-group>
+    <ion-item-divider color="light" id='A'>A</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='B'>B</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='C'>C</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='D'>D</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='E'>E</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='F'>F</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='G'>G</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='H'>H</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='I'>I</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='J'>J</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='K'>K</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='L'>L</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='M'>M</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='N'>N</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='O'>O</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='P'>P</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='Q'>Q</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='R'>R</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='S'>S</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='T'>T</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='U'>U</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='V'>V</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='W'>W</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='S'>X</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='Y'>Y</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light" id='Z'>Z</ion-item-divider>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+    <ion-item class="team-commun">
+      <!-- border-raius:50%;overflow:hidden; -->
+      <ion-thumbnail item-start>
+        <img src="{{ images }}">
+      </ion-thumbnail>
+      <h2>{{ name }}<i>{{ icon }}</i></h2>
+      <span>{{ team }}</span>
+      <span class="team-posit">{{ position }}</span>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,60 @@
+page-register {
+
+    #forget {
+        background: #f4f4f4;
+        ion-list {
+            padding-top: 20px;
+            ion-item {
+                border-top:none;
+                background: #f4f4f4;
+                border:none;
+                padding-right: 12px;
+                .item-inner {
+                    border:none;
+                }
+                &.btn {
+                    border-radius: 5px;
+                    margin-top: 25px;
+                    ion-label {
+                        margin-right: 0;
+                    }
+                }
+                ion-label {
+                    font-weight: 700;
+                    font-size:16px;
+                }
+                ion-input {
+                    background: #fff;
+                    padding:.5rem 1rem;
+                    margin-top:.5rem;
+                }
+            }
+            .one-select {
+                .input-wrapper {
+                    flex-direction: column;
+                    align-items: left;
+                    .select {
+                        max-width: 100%;
+                        width: 100%;
+                        background-color: white;
+                    }
+                }
+            }
+            .phoneNum {
+                position: relative; 
+                .code {
+                    position: absolute;
+                    right:2rem;
+                    top:4.5rem;
+                    color:#50b8ec;
+                }
+            }
+            .tip {
+                padding-left:16px;
+                i{
+                    color: red;
+                }
+            }
+        }
+    }
+}

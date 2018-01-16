@@ -1,0 +1,63 @@
+
+page-teamAdd {
+    .title-md{
+        margin-left: 7rem;
+    }
+    #people{
+        position: relative;
+        .anchor{
+            position: fixed;
+            top: 18rem;
+            right: 1rem;
+            display: flex;
+            flex-direction:column;
+            z-index: 101;
+            a{
+                color: #ccc;
+                text-decoration: none;
+            }
+        }
+    }
+    #myTeam{
+        position: relative;
+        ion-icon{
+            position: absolute;
+            top: 0.9rem;
+            left: 2rem;
+        }
+        span{
+            position: absolute;
+            top: 0.9rem;
+            right: 2rem;
+            color: #666;
+            z-index: 101;
+        }
+    }
+    .team-commun{
+        img{
+            border-radius: 50%;
+        }
+        border-bottom: 1px solid #eee;
+        span{
+            font-size: 1.4rem;
+            color: #ccc;
+        }
+        .team-posit{
+            margin-left: 20px;
+        }
+        .item-inner{
+            border: 0 !important;
+        }
+        h2{
+            i{
+                margin-left: 16px;
+                background: #5395f1;
+            }
+        }
+    }
+    #A,#B,#C,#D,#E,#F,#G,#H,#I,#J,#K,#L,#M,#N,#O,#P,#Q,#R,#S,#T,#U,#V,#W,#S,#Y,#Z{
+        height: 3rem;
+        background: #eee;
+        color: #666;
+    }
+}
